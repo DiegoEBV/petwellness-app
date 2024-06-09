@@ -1,0 +1,481 @@
+/* home.component.css */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+.homevet {
+  font-family: 'Open Sans', sans-serif;
+  padding: 20px;
+  background-color: #F0F0F2;
+}
+
+header {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: 32px;
+  color: #003049;
+  font-weight: 400;
+}
+
+header h1 span {
+  color: #003049;
+  font-weight: bold;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.dashboard-item {
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/*Lectura Diaria*/
+.lectura-diaria h2 {
+  margin: 0 0 10px 0;
+  color: #003049;
+}
+
+.lectura-diaria img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.lectura-diaria p {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 10px 0;
+}
+
+.lectura-diaria button {
+  background: #54AFB2;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.lectura-diaria button:hover {
+  background: #003049;
+}
+
+/*Tareas de hoy*/
+.tareas-de-hoy .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tareas-de-hoy h2 {
+  margin: 0;
+  color: #003049;
+}
+
+.task-count {
+  background: #54AFB2;
+  color: #fff;
+  border-radius: 10px;
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.tareas-de-hoy ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.tareas-de-hoy ul li {
+  margin-bottom: 10px;
+}
+
+.task-container {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #54AFB2;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.task-details {
+  flex-grow: 1;
+}
+
+.task-details p {
+  margin: 0;
+  font-size: 16px;
+  color: #003049;
+  font-weight: 600;
+}
+
+.task-details time {
+  font-size: 12px;
+  color: #726C6C;
+}
+
+.external-link {
+  font-size: 16px;
+  color: #003049;
+  cursor: pointer;
+}
+
+.ver-mas {
+  background: none;
+  border: none;
+  color: #54AFB2;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.add-reminder:hover {
+  text-decoration: underline;
+}
+
+/*Proximas Consultas*/
+.proximas-consultas h2 {
+  margin: 0;
+  margin-bottom: 20px;
+  color: #003049;
+}
+
+.proximas-consultas ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.proximas-consultas ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.proximas-consultas ul li:last-child {
+  border-bottom: none;
+}
+
+.proximas-consultas img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.appointment-details {
+  flex-grow: 1;
+}
+
+.appointment-details p {
+  margin: 0;
+  font-size: 16px;
+  color: #003049;
+  font-weight: 600;
+}
+
+.appointment-details time {
+  font-size: 12px;
+  color: #666;
+}
+
+.proximas-consultas button {
+  background: #54AFB2;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.proximas-consultas button:hover {
+  background: #003049;
+  color: #fff;
+}
+
+/*Calendario*/
+
+.calendar {
+  text-align: center;
+  background: #fff;
+  padding: 20px;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.calendar-header h2 {
+  margin: 0px;
+  color: #003049;
+}
+
+.calendar-header .prev, .calendar-header .next {
+  cursor: pointer;
+  font-size: 18px;
+  color: #003049;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: #fff;
+}
+
+.calendar-header .days {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.calendar-header .days li {
+  width: 14.28%;
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+}
+
+.calendar-body {
+  display: flex;
+  justify-content: center;
+}
+
+.calendar-body .dates {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  width: 70%;
+}
+
+.calendar-body .dates li {
+  width: 14.28%;
+  text-align: center;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #003049;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.calendar-body .dates .active {
+  background: #54AFB2;
+  color: #fff;
+  border-radius: 12px;
+  font-weight: bold;
+}
+
+.calendar-header .add-reminder {
+  background: none;
+  border: none;
+  color: #003049;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.appointments {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left; /* Align text to the left */
+}
+
+.appointments li {
+  margin-bottom: 10px;
+}
+
+.task-container {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #54AFB2;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.task-details {
+  flex-grow: 1;
+}
+
+.task-details p {
+  margin: 0;
+  font-size: 16px;
+  color: #003049;
+  font-weight: 600;
+}
+
+.task-details time {
+  font-size: 12px;
+  color: #726C6C;
+}
+
+.external-link {
+  font-size: 16px;
+  color: #003049;
+  cursor: pointer;
+}
+
+.add-reminder:hover {
+  text-decoration: underline;
+}
+
+/*Proximo paciente*/
+.proximo-paciente .patient-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.proximo-paciente .patient-header h2 {
+  margin: 0;
+  color: #003049;
+}
+
+.proximo-paciente .external-link {
+  font-size: 16px;
+  color: #003049;
+  cursor: pointer;
+}
+
+.patient-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.patient-info img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+.patient-details h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #003049;
+  font-weight: 600;
+}
+
+.patient-details p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #666;
+}
+
+.patient-details span {
+  color: #54AFB2;
+}
+
+.patient-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.patient-stats div {
+  text-align: center;
+}
+
+.patient-stats span {
+  display: block;
+  font-size: 12px;
+  color: #666;
+}
+
+.patient-stats p {
+  margin: 0;
+  font-size: 14px;
+  color: #003049;
+  font-weight: 600;
+}
+
+.patient-notes {
+  border-top: 1px solid #e0e0e0;
+  padding-top: 10px;
+}
+
+.tabs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.tabs li {
+  font-size: 14px;
+  color: #666;
+  cursor: pointer;
+}
+
+.tabs .active {
+  color: #003049;
+  font-weight: 600;
+  border-bottom: 2px solid #54AFB2;
+}
+
+.patient-notes p {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+}
+  
