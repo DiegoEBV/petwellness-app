@@ -392,6 +392,7 @@ header h1 span {
   display: flex;
   align-items: center;
   margin-bottom: 20px;
+  flex-direction: column;
 }
 
 .patient-info img {
@@ -401,6 +402,9 @@ header h1 span {
   margin-right: 15px;
 }
 
+.patient-details {
+  justify-content: center;
+}
 .patient-details h3 {
   margin: 0;
   font-size: 18px;
