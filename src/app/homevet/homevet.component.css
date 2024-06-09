@@ -1,5 +1,4 @@
 /* home.component.css */
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
 .homevet {
   font-family: 'Open Sans', sans-serif;
   padding: 20px;
@@ -26,6 +25,7 @@ header h1 span {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
+  grid-template-rows: auto auto;
 }
 
 .dashboard-item {
@@ -36,6 +36,22 @@ header h1 span {
 }
 
 /*Lectura Diaria*/
+.lectura-y-tareas {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-column: span 2; 
+  grid-row: span 1; 
+  padding: 0px;
+}
+
+.lectura-diaria, .tareas-de-hoy {
+  padding: 20px;
+}
+
+.lectura-diaria {
+  border-right: 0px solid #e0e0e0; 
+}
+
 .lectura-diaria h2 {
   margin: 0 0 10px 0;
   color: #003049;
@@ -50,7 +66,7 @@ header h1 span {
 
 .lectura-diaria p {
   font-size: 14px;
-  color: #666;
+  color: #003049;
   margin: 0 0 10px 0;
 }
 
@@ -68,7 +84,6 @@ header h1 span {
   background: #003049;
 }
 
-/*Tareas de hoy*/
 .tareas-de-hoy .header {
   display: flex;
   justify-content: space-between;
@@ -145,44 +160,55 @@ header h1 span {
   cursor: pointer;
 }
 
+.ver-mas-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px; 
+}
+
 .ver-mas {
   background: none;
   border: none;
-  color: #54AFB2;
+  color: #003049;
   font-size: 14px;
   cursor: pointer;
 }
 
-.add-reminder:hover {
+.ver-mas:hover {
   text-decoration: underline;
 }
 
+
 /*Proximas Consultas*/
+.proximas-consultas {
+  grid-column: span 1; 
+  grid-row: span 2; 
+}
+
 .proximas-consultas h2 {
   margin: 0;
-  margin-bottom: 20px;
   color: #003049;
+  margin-bottom: 10px;
 }
 
-.proximas-consultas ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.consultas-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.proximas-consultas ul li {
+.consulta-card {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0;
-  border-bottom: 1px solid #e0e0e0;
+  background: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  flex: 1 1 calc(50% - 20px);
 }
 
-.proximas-consultas ul li:last-child {
-  border-bottom: none;
-}
-
-.proximas-consultas img {
+.consulta-card img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -202,10 +228,10 @@ header h1 span {
 
 .appointment-details time {
   font-size: 12px;
-  color: #666;
+  color: #726C6C;
 }
 
-.proximas-consultas button {
+.consulta-card button {
   background: #54AFB2;
   color: #fff;
   border: none;
@@ -215,9 +241,8 @@ header h1 span {
   font-size: 14px;
 }
 
-.proximas-consultas button:hover {
+.consulta-card button:hover {
   background: #003049;
-  color: #fff;
 }
 
 /*Calendario*/
@@ -311,7 +336,9 @@ header h1 span {
   list-style: none;
   padding: 0;
   margin: 0;
-  text-align: left; /* Align text to the left */
+  text-align: left; 
+  max-height: 200px; 
+  overflow-y: auto;
 }
 
 .appointments li {
@@ -324,7 +351,7 @@ header h1 span {
   background: #fff;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
-  padding: 10px;
+  padding: 15px;
 }
 
 .icon {
@@ -356,7 +383,7 @@ header h1 span {
 
 .task-details time {
   font-size: 12px;
-  color: #726C6C;
+  color: #676D89;
 }
 
 .external-link {
@@ -391,6 +418,7 @@ header h1 span {
 .patient-info {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 20px;
   flex-direction: column;
 }
@@ -399,27 +427,26 @@ header h1 span {
   width: 80px;
   height: 80px;
   border-radius: 50%;
-  margin-right: 15px;
 }
 
 .patient-details {
-  justify-content: center;
+  text-align: center;
 }
 .patient-details h3 {
   margin: 0;
   font-size: 18px;
   color: #003049;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .patient-details p {
   margin: 5px 0;
   font-size: 14px;
-  color: #666;
+  color: #003049;
 }
 
 .patient-details span {
-  color: #54AFB2;
+  color: #003049;
 }
 
 .patient-stats {
@@ -435,7 +462,7 @@ header h1 span {
 .patient-stats span {
   display: block;
   font-size: 12px;
-  color: #666;
+  color: #676D89;
 }
 
 .patient-stats p {

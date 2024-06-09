@@ -5,128 +5,48 @@
     </header>
     <main>
       <div class="dashboard">
-        <section class="dashboard-item lectura-diaria">
-          <h2>Lectura Diária</h2>
-          <img src="assets/lecdia.png" alt="Lectura Diária">
-          <p>La vacuna de ADN de origami DoriVac allana el camino para la inmunoterapia personalizada contra el cáncer.</p>
-          <button>Leer más</button>
-        </section>
-        <section class="dashboard-item tareas-de-hoy">
-          <div class="header">
-            <h2>Tareas de Hoy</h2>
-            <span class="task-count">12</span>
+        <section class="dashboard-item lectura-y-tareas">
+          <div class="lectura-diaria">
+            <h2>Lectura Diária</h2>
+            <img src="assets/lecdia.png" alt="Lectura Diária">
+            <p>La vacuna de ADN de origami DoriVac allana el camino para la inmunoterapia personalizada contra el cáncer.</p>
+            <button>Leer más</button>
           </div>
-          <ul>
-            <li>
-              <div class="task-container">
-                <span class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNklEQVR4nO3WvytFYRjA8eNXGQwUShQDd6AUJUIMNq7xMtjskkyUSaSkmLgJZVNistgsNvEffXS7r5g4x33VTfept+cZzvt+3+fbc04nSWpRDYFhNGIALehGJ9rQh2YMog4jYc9HHv0NsB+beMYJHnGBe9zgGg84xRMO8YIDvIb8hh1Mp4VO4gw57KIXaxjDMhYwi9XQ7RY6cBRMHIdcunAPNrCeBnyOpqB3qaQxs7LyOXOYCPUl6n/aUAx5CCto+CV4HjOh3kd7KnDMwF4a8C0KEdZUmIVx3FV1x8WqAit/QApBXyFtXRHY52uxiHyWulJw7svAZKozg2VUGk21jEqjqVaB3ppq/1J18v2Ze3811eMxwbkMSruigWNGWvBVVGr5zCO0/vRQPvx3FSOu7djN1CJJG++5NFwDQjfIuQAAAABJRU5ErkJggg=="></span>
-                <div class="task-details">
-                  <p>Consulta con Copito</p>
-                  <time>11:30 AM</time>
+          <div class="tareas-de-hoy">
+            <div class="header">
+              <h2>Tareas de Hoy</h2>
+              <span class="task-count">12</span>
+            </div>
+            <ul class="tasks">
+              <li *ngFor="let task of tasks">
+                <div class="task-container">
+                  <span class="icon"><img [src]="task.icon" alt="icon"></span>
+                  <div class="task-details">
+                    <p>{{ task.name }}</p>
+                    <time>{{ task.time }}</time>
+                  </div>
+                  <span class="external-link"><img [src]="task.linkIcon" alt="link icon"></span>
                 </div>
-                <span class="external-link"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAABJElEQVR4nO2VvWoCQRSFv7G0ij9VniBEm6BYaB4gsTWFSAgY0Cpd8iqCgk8QSC8KAcuIRQi+h0lhlUJZOMIizuzuaBPigVNc5s79uMPevfDflQEega7FD0D6UEgbWEf43lWgArwBc4tvgBRQBEohl4FpCNKxAVrAL/CtC5Mdj4DqnnsG6Kv4xAXJq/gHkE3wdCYE6KtDK+ROh7cJAYMQIIgLLkhHhwUPwEAxx4QYoKf8oT4Ejgkxlg62utBZ2xdiIgCoq2BQz3whTxGAmubIqjiQS4H2AdAcfR0KidIYWLgSTpBEz7X9fV/hrynw6Uq4FuTZE5ADfoBXV1IwRO/ACnjRXinFdB2YaU0EsVPnAq09vASacds2ejrXDu/uuJFwB/1RbQAq/nUqTc80IgAAAABJRU5ErkJggg=="></span>
-              </div>
-            </li>
-            <li>
-              <div class="task-container">
-                <span class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAACL0lEQVR4nO2WTUhVQRTHX4VFGEiipS5bZB+4M9wVLQxXLtQsV7UIHiRFGLh0Y0sRAw3ahSi0EEE0XQiSUrskSCKiD5JSCCoVwlLLnxz8S9N43333Pp+C4Fm9N+f8z2/mzJyZm0js2W4woAJ4BEwDy8B3YAxIAge3A5gDPABWWbclwef5Z2+A09mEHgKGlXwGuAbkyrcPKAeeyP8NOJFt6BRQnCLOJtChuGfZhhamiT8ATCr+4o5AHd11adp3DCrtGekGtwI1q42pPyXd0FZOr9lP4HyMHA3S3c+4vMDduHBgXJqqjKCOz4VfSJOnWbEvrb0yhqaDA0eAq3aCgV7daotAWZTV9kQ5vT4cuAJ8ZbOt6i7PD4NeVvBH4FiESW7AfwuwAnQD9ban8r9XzKRVJFWiFwoK3TtPc0+axaDbCTgMDCjmYVCC45r166hQ6TqV9I43XgKMAk3a+1m9YCVB76pZb0zwO5U4z4O+Vb4OjbXpf52fwJ4ys8cxwba/symg/fZuazypsWY/QT7wB/gQA3rTaRn7MMgLgiq2RePJoERP5ayOAd2wGuCkyt7nQfcDrxS3uaeBSjmtH0tDoLedlbbo97TKXODfUs5qx8NWYreO2RxwCzjq+MrsDMj/C7ik8S7nIbkBFOkGPOfEL9hLFQa2srQCfyWw0n0Bfjhl/Wxd4GnaHI1vn2wSITv33wTOWsPbYVP/2Yyfqy9zQzTW1xP6whwBGu0SiQTds8Q22Ro+FmQNgKZM2gAAAABJRU5ErkJggg=="></span>
-                <div class="task-details">
-                  <p>Revisión de Medicamentos de Jade</p>
-                  <time>11:40 AM</time>
-                </div>
-                <span class="external-link"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAABJElEQVR4nO2VvWoCQRSFv7G0ij9VniBEm6BYaB4gsTWFSAgY0Cpd8iqCgk8QSC8KAcuIRQi+h0lhlUJZOMIizuzuaBPigVNc5s79uMPevfDflQEega7FD0D6UEgbWEf43lWgArwBc4tvgBRQBEohl4FpCNKxAVrAL/CtC5Mdj4DqnnsG6Kv4xAXJq/gHkE3wdCYE6KtDK+ROh7cJAYMQIIgLLkhHhwUPwEAxx4QYoKf8oT4Ejgkxlg62utBZ2xdiIgCoq2BQz3whTxGAmubIqjiQS4H2AdAcfR0KidIYWLgSTpBEz7X9fV/hrynw6Uq4FuTZE5ADfoBXV1IwRO/ACnjRXinFdB2YaU0EsVPnAq09vASacds2ejrXDu/uuJFwB/1RbQAq/nUqTc80IgAAAABJRU5ErkJggg=="></span>
-              </div>
-            </li>
-            <li>
-              <div class="task-container">
-                <span class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABIUlEQVR4nNWXO04DMRRFBylLoE9NRTGiTJs0oaCBhjZTsgEEu0iRJihiMxSjKWcJUFCmS3MiRzayHH8m5ongK13J8vN9R/OzNVX13wU8AB9AG7Cq3f8GcAssgZXjL+AdaAJWtU9PTvWap6A3wA7YeBp8K0Ak2+g1bm6je9Yx8ALo9Lh23A8A925O1zrVu0qEWz32KQU+kq61sawP/HN7gDfSWlvraynwCLj2PAJjVRuJg09V2WDCm8azlb0z85LgJuCJlb0y82LgHEldcR3w2MpeOpuGCDiklZM9SAyco7LBHJ84xo9WdmLmywfnqGww5/qcONcGkqNiwX3kSEy5zwU3Eh4KngFb4EkKrHttgWkMfAG8Jn5VTrXq9TLszfgD7QE3ju7Op6uo/gAAAABJRU5ErkJggg=="></span>
-                <div class="task-details">
-                  <p>Check de resultados de Milanes</p>
-                  <time>12:10 AM</time>
-                </div>
-                <span class="external-link"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAABJElEQVR4nO2VvWoCQRSFv7G0ij9VniBEm6BYaB4gsTWFSAgY0Cpd8iqCgk8QSC8KAcuIRQi+h0lhlUJZOMIizuzuaBPigVNc5s79uMPevfDflQEega7FD0D6UEgbWEf43lWgArwBc4tvgBRQBEohl4FpCNKxAVrAL/CtC5Mdj4DqnnsG6Kv4xAXJq/gHkE3wdCYE6KtDK+ROh7cJAYMQIIgLLkhHhwUPwEAxx4QYoKf8oT4Ejgkxlg62utBZ2xdiIgCoq2BQz3whTxGAmubIqjiQS4H2AdAcfR0KidIYWLgSTpBEz7X9fV/hrynw6Uq4FuTZE5ADfoBXV1IwRO/ACnjRXinFdB2YaU0EsVPnAq09vASacds2ejrXDu/uuJFwB/1RbQAq/nUqTc80IgAAAABJRU5ErkJggg=="></span>
-              </div>
-            </li>
-          </ul>
-          <button class="ver-mas">Ver más</button>
-        </section>        
+              </li>
+            </ul>            
+            <div class="ver-mas-container">
+              <button class="ver-mas">Ver más</button>
+            </div>            
+          </div>
+        </section>                
         <section class="dashboard-item proximas-consultas">
           <h2>Próximas Consultas</h2>
-          <ul>
-            <li>
-              <img src="assets/george.png" alt="George">
+          <div class="consultas-list">
+            <div class="consulta-card" *ngFor="let consulta of consultas">
+              <img [src]="consulta.img" [alt]="consulta.nombre">
               <div class="appointment-details">
-                <p>George</p>
-                <time>18 Mayo, 2024 | 09:00 AM</time>
+                <p>{{ consulta.nombre }}</p>
+                <time>{{ consulta.fecha }} | {{ consulta.hora }}</time>
               </div>
               <button>Historial Clínico</button>
-            </li>
-            <li>
-              <img src="assets/chewbacca.png" alt="Chewbacca">
-              <div class="appointment-details">
-                <p>Chewbacca</p>
-                <time>18 Mayo, 2024 | 10:00 AM</time>
-              </div>
-              <button>Historial Clínico</button>
-            </li>
-            <li>
-              <img src="assets/copito.png" alt="Copito">
-              <div class="appointment-details">
-                <p>Copito</p>
-                <time>18 Mayo, 2024 | 11:30 AM</time>
-              </div>
-              <button>Historial Clínico</button>
-            </li>
-            <li>
-              <img src="assets/petiso.png" alt="Petiso">
-              <div class="appointment-details">
-                <p>Petiso</p>
-                <time>19 Mayo, 2024 | 09:00 AM</time>
-              </div>
-              <button>Historial Clínico</button>
-            </li>
-            <li>
-              <img src="assets/jade.png" alt="Jade">
-              <div class="appointment-details">
-                <p>Jade</p>
-                <time>19 Mayo, 2024 | 10:00 AM</time>
-              </div>
-              <button>Historial Clínico</button>
-            </li>
-            <li>
-              <img src="assets/garfield.png" alt="Garfield">
-              <div class="appointment-details">
-                <p>Garfield</p>
-                <time>19 Mayo, 2024 | 11:00 AM</time>
-              </div>
-              <button>Historial Clínico</button>
-            </li>
-            <li>
-              <img src="assets/chicheñol.png" alt="ChiCheñol">
-              <div class="appointment-details">
-                <p>ChiCheñol</p>
-                <time>20 Mayo, 2024 | 10:00 AM</time>
-              </div>
-              <button>Historial Clínico</button>
-            </li>
-            <li>
-              <img src="assets/stuart.png" alt="Stuart">
-              <div class="appointment-details">
-                <p>Stuart</p>
-                <time>20 Mayo, 2024 | 12:00 AM</time>
-              </div>
-              <button>Historial Clínico</button>
-            </li>
-            <li>
-              <img src="assets/polly.png" alt="Polly">
-              <div class="appointment-details">
-                <p>Polly</p>
-                <time>20 Mayo, 2024 | 14:00 PM</time>
-              </div>
-              <button>Historial Clínico</button>
-            </li>
-          </ul>
-        </section>        
+            </div>
+          </div>
+        </section>            
         <section class="dashboard-item calendar">
           <div class="calendar-header">
             <h2>Abril 2024 <span class="dropdown-icon">▼</span></h2>
@@ -149,43 +69,16 @@
             </div>
           </div>          
           <ul class="appointments">
-            <li>
+            <li *ngFor="let appointment of appointments">
               <div class="task-container">
-                <span class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNklEQVR4nO3WvytFYRjA8eNXGQwUShQDd6AUJUIMNq7xMtjskkyUSaSkmLgJZVNistgsNvEffXS7r5g4x33VTfept+cZzvt+3+fbc04nSWpRDYFhNGIALehGJ9rQh2YMog4jYc9HHv0NsB+beMYJHnGBe9zgGg84xRMO8YIDvIb8hh1Mp4VO4gw57KIXaxjDMhYwi9XQ7RY6cBRMHIdcunAPNrCeBnyOpqB3qaQxs7LyOXOYCPUl6n/aUAx5CCto+CV4HjOh3kd7KnDMwF4a8C0KEdZUmIVx3FV1x8WqAit/QApBXyFtXRHY52uxiHyWulJw7svAZKozg2VUGk21jEqjqVaB3ppq/1J18v2Ze3811eMxwbkMSruigWNGWvBVVGr5zCO0/vRQPvx3FSOu7djN1CJJG++5NFwDQjfIuQAAAABJRU5ErkJggg=="></span>
+                <span class="icon"><img [src]="appointment.icon" alt="icon"></span>
                 <div class="task-details">
-                  <p>Consulta con George</p>
-                  <time>09:20 AM - 11:30 AM</time>
+                  <p>{{ appointment.name }}</p>
+                  <time>{{ appointment.time }}</time>
                 </div>
               </div>
             </li>
-            <li>
-              <div class="task-container">
-                <span class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABNklEQVR4nO3WvytFYRjA8eNXGQwUShQDd6AUJUIMNq7xMtjskkyUSaSkmLgJZVNistgsNvEffXS7r5g4x33VTfept+cZzvt+3+fbc04nSWpRDYFhNGIALehGJ9rQh2YMog4jYc9HHv0NsB+beMYJHnGBe9zgGg84xRMO8YIDvIb8hh1Mp4VO4gw57KIXaxjDMhYwi9XQ7RY6cBRMHIdcunAPNrCeBnyOpqB3qaQxs7LyOXOYCPUl6n/aUAx5CCto+CV4HjOh3kd7KnDMwF4a8C0KEdZUmIVx3FV1x8WqAit/QApBXyFtXRHY52uxiHyWulJw7svAZKozg2VUGk21jEqjqVaB3ppq/1J18v2Ze3811eMxwbkMSruigWNGWvBVVGr5zCO0/vRQPvx3FSOu7djN1CJJG++5NFwDQjfIuQAAAABJRU5ErkJggg=="></span>
-                <div class="task-details">
-                  <p>Consulta con Copito</p>
-                  <time>11:30 AM - 11:50 PM</time>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="task-container">
-                <span class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABIUlEQVR4nNWXO04DMRRFBylLoE9NRTGiTJs0oaCBhjZTsgEEu0iRJihiMxSjKWcJUFCmS3MiRzayHH8m5ongK13J8vN9R/OzNVX13wU8AB9AG7Cq3f8GcAssgZXjL+AdaAJWtU9PTvWap6A3wA7YeBp8K0Ak2+g1bm6je9Yx8ALo9Lh23A8A925O1zrVu0qEWz32KQU+kq61sawP/HN7gDfSWlvraynwCLj2PAJjVRuJg09V2WDCm8azlb0z85LgJuCJlb0y82LgHEldcR3w2MpeOpuGCDiklZM9SAyco7LBHJ84xo9WdmLmywfnqGww5/qcONcGkqNiwX3kSEy5zwU3Eh4KngFb4EkKrHttgWkMfAG8Jn5VTrXq9TLszfgD7QE3ju7Op6uo/gAAAABJRU5ErkJggg=="></span>
-                <div class="task-details">
-                  <p>Reunión pre operación de cardiología</p>
-                  <time>03:00 PM - 04:00 PM</time>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="task-container">
-                <span class="icon"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAACXBIWXMAAAsTAAALEwEAmpwYAAABIUlEQVR4nNWXO04DMRRFBylLoE9NRTGiTJs0oaCBhjZTsgEEu0iRJihiMxSjKWcJUFCmS3MiRzayHH8m5ongK13J8vN9R/OzNVX13wU8AB9AG7Cq3f8GcAssgZXjL+AdaAJWtU9PTvWap6A3wA7YeBp8K0Ak2+g1bm6je9Yx8ALo9Lh23A8A925O1zrVu0qEWz32KQU+kq61sawP/HN7gDfSWlvraynwCLj2PAJjVRuJg09V2WDCm8azlb0z85LgJuCJlb0y82LgHEldcR3w2MpeOpuGCDiklZM9SAyco7LBHJ84xo9WdmLmywfnqGww5/qcONcGkqNiwX3kSEy5zwU3Eh4KngFb4EkKrHttgWkMfAG8Jn5VTrXq9TLszfgD7QE3ju7Op6uo/gAAAABJRU5ErkJggg=="></span>
-                <div class="task-details">
-                  <p>Operación de cardiología</p>
-                  <time>04:30 PM - 05:15 PM</time>
-                </div>
-              </div>
-            </li>
-          </ul>
+          </ul>          
         </section>        
         <section class="dashboard-item proximo-paciente">
           <div class="patient-header">
@@ -216,14 +109,21 @@
           </div>
           <div class="patient-notes">
             <ul class="tabs">
-              <li class="active">Resumen</li>
-              <li>Condición</li>
-              <li>Notas</li>
+              <li (click)="selectTab('resumen')" [class.active]="selectedTab === 'resumen'">Resumen</li>
+              <li (click)="selectTab('condicion')" [class.active]="selectedTab === 'condicion'">Condición</li>
+              <li (click)="selectTab('notas')" [class.active]="selectedTab === 'notas'">Notas</li>
             </ul>
-            <p>George es un Corgi Galés de 4 años de edad, macho tiene alergia en las almohadillas, presenta un soplo mínimo por lo que requiere un ecocardiograma.</p>
-          </div>
+            <p *ngIf="selectedTab === 'resumen'">
+              George es un Corgi Galés de 4 años de edad, macho tiene alergia en las almohadillas, presenta un soplo mínimo por lo que requiere un ecocardiograma.
+            </p>
+            <p *ngIf="selectedTab === 'condicion'">
+              George tiene una condición estable, pero necesita chequeos regulares debido a su soplo cardíaco.
+            </p>
+            <p *ngIf="selectedTab === 'notas'">
+              La próxima cita de George es el 15 de julio para realizar el ecocardiograma.
+            </p>
+          </div>  
         </section>
-        
       </div>
     </main>
   </div>

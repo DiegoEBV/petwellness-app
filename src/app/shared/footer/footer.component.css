@@ -1,4 +1,3 @@
-/* footer.component.css */
 .footer {
   display: flex;
   justify-content: space-between;
@@ -6,10 +5,9 @@
   background-color: #fff;
   padding: 10px 20px;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
-  position: fixed;
   width: 100%;
   bottom: 0;
-  position: relative;
+  box-sizing: border-box; 
 }
 
 .footer-left,
