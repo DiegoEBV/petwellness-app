@@ -8,13 +8,15 @@ import { MaterialModule } from './material/material.module';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomevetComponent } from './homevet/homevet.component';
+import { NotificationNavbarComponent } from './shared/navbar/notification-navbar/notification-navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    HomevetComponent
+    HomevetComponent,
+    NotificationNavbarComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,19 +1,20 @@
-<!-- navbar.component.html -->
 <nav class="navbar">
-    <div class="navbar-brand">
-      <img src="assets/logo.png" alt="PetWellness Logo">
-    </div>
-    <ul class="navbar-links">
-      <li><a routerLink="/homevet" routerLinkActive="active">Inicio</a></li>
-      <li><a routerLink="/consutas" routerLinkActive="active">Consultas</a></li>
-      <li><a routerLink="/perfiles" routerLinkActive="active">Perfiles</a></li>
-    </ul>
-    <div class="navbar-actions">
+  <div class="navbar-brand">
+    <img src="assets/logo.png" alt="PetWellness Logo">
+  </div>
+  <ul class="navbar-links">
+    <li><a routerLink="/homevet" routerLinkActive="active">Inicio</a></li>
+    <li><a routerLink="/consultas" routerLinkActive="active">Consultas</a></li>
+    <li><a routerLink="/perfiles" routerLinkActive="active">Perfiles</a></li>
+  </ul>
+  <div class="navbar-actions">
+    <div class="search-container">
       <button class="search-button"><mat-icon aria-hidden="false" fontIcon="search"></mat-icon></button>
-      <button class="notification-button"><mat-icon aria-hidden="false" fontIcon="notifications"></mat-icon></button>
-      <div class="user-profile">
-        <img src="assets/doct.png" alt="User Avatar">
-      </div>
+      <input type="text" class="search-input" placeholder="Buscar...">
     </div>
-  </nav>
-  
+    <app-notification-navbar></app-notification-navbar>
+    <div class="user-profile">
+      <img src="assets/doct.png" alt="User Avatar">
+    </div>
+  </div>
+</nav>
