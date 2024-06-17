@@ -10,6 +10,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomevetComponent } from './homevet/homevet.component';
 import { NotificationNavbarComponent } from './shared/navbar/notification-navbar/notification-navbar.component';
 import { LoginComponent } from './login/login.component';
+import { SigninComponent } from './signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { LoginComponent } from './login/login.component';
     HomevetComponent,
     NotificationNavbarComponent,
     LoginComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,

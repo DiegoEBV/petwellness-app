@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetWellness Login</title>
+    <link rel="stylesheet" href="signin.component.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <img src="assets/logo.png" alt="PetWellness Logo" class="logo">
+            <h2>Crea una cuenta</h2>
+            <div class="tabs">
+                <button class="tab" [class.active]="activeTab === 'duenos'" (click)="changeTab('duenos')">Dueños</button>
+                <button class="tab" [class.active]="activeTab === 'albergues'" (click)="changeTab('albergues')">Albergues</button>
+                <button class="tab" [class.active]="activeTab === 'veterinario'" (click)="changeTab('veterinario')">Veterinario</button>
+            </div>
+            <div class="social-login">
+                <img class="google" src="assets/google.png" alt="Google">
+                <img class="apple" src="assets/apple.png" alt="Apple">
+                <img class="facebook" src="assets/facebook.png" alt="Facebook">
+            </div>
+            <div>
+                <div *ngIf="activeTab === 'duenos'">
+                    <div class="input-group">
+                        <p class="nombre">Nombres</p>
+                        <input type="nombre" >
+    
+                        <p class="apellido">Apellidos</p>
+                        <input type="apellido" >
+    
+                        <p class="email">Email</p>
+                        <input type="email" >
+    
+                        <p class="telefono">Teléfono</p>
+                        <input type="telefono" >
+    
+                        <p class="password">Contraseña</p>
+                        <input type="password" >
+    
+                        <p class="c_password">Confirmar contraseña</p>
+                        <input type="c_password" >
+                    </div>
+                </div>
+                <div *ngIf="activeTab === 'albergues'">
+                    <div class="input-group">
+                        <p class="nombre">Nombres</p>
+                        <input type="nombre" >
+    
+                        <p class="apellido">Apellidos</p>
+                        <input type="apellido" >
+    
+                        <p class="email">Email</p>
+                        <input type="email" >
+    
+                        <p class="telefono">Teléfono</p>
+                        <input type="telefono" >
+
+                        <p class="albergue">Nombre del albergue</p>
+                        <input type="albergue" >
+
+                        <p class="t_albergue">Tipo de albergue</p>
+                        <input type="t_albergue" >
+    
+                        <p class="password">Contraseña</p>
+                        <input type="password" >
+    
+                        <p class="c_password">Confirmar contraseña</p>
+                        <input type="c_password" >
+                    </div>
+                </div>
+                <div *ngIf="activeTab === 'veterinario'">
+                    <div class="input-group">
+                        <p class="nombre">Nombres</p>
+                        <input type="nombre" >
+    
+                        <p class="apellido">Apellidos</p>
+                        <input type="apellido" >
+    
+                        <p class="email">Email</p>
+                        <input type="email" >
+    
+                        <p class="telefono">Teléfono</p>
+                        <input type="telefono" >
+
+                        <p class="especialidad">Especialidad</p>
+                        <input type="especialidad" >
+
+                        <p class="institucion">Institución educativa</p>
+                        <input type="institucion" >
+    
+                        <p class="password">Contraseña</p>
+                        <input type="password" >
+    
+                        <p class="c_password">Confirmar contraseña</p>
+                        <input type="c_password" >
+                    </div>
+                </div>  
+
+                <button type="submit" class="login-btn">Crear</button>
+            </div>
+            <hr>
+            <a class="your-account">¿Ya tienes cuenta?</a><!-- Link to create a new account -->
+            <button href="#" class="access-account">Accede a tu cuenta</button>
+        </div>
+    </div>
+</body>
+</html>
