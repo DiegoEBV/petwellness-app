@@ -9,6 +9,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { HomevetComponent } from './homevet/homevet.component';
 import { NotificationNavbarComponent } from './shared/navbar/notification-navbar/notification-navbar.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { NotificationNavbarComponent } from './shared/navbar/notification-navbar
     FooterComponent,
     HomevetComponent,
     NotificationNavbarComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

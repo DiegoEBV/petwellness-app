@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetWellness Login</title>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="login.component.css">
+    <!-- Link to Google Material Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <!-- Container for the entire login box -->
+    <div class="login-container">
+        <!-- Login box with form and social login buttons -->
+        <div class="login-box">
+            <!-- PetWellness logo -->
+            <img src="assets/logo.png" alt="PetWellness Logo" class="logo">
+            <h2>Accede a tu cuenta</h2>
+            <!-- Tabs for different user types -->
+            <div class="tabs">
+                <button class="tab" [class.active]="activeTab === 'duenos'" (click)="changeTab('duenos')">Dueños</button>
+                <button class="tab" [class.active]="activeTab === 'albergues'" (click)="changeTab('albergues')">Albergues</button>
+                <button class="tab" [class.active]="activeTab === 'veterinario'" (click)="changeTab('veterinario')">Veterinario</button>
+            </div>
+            <div *ngIf="activeTab === 'duenos'">
+                
+            </div>
+            <div *ngIf="activeTab === 'albergues'">
+
+            </div>
+            <div *ngIf="activeTab === 'veterinario'">
+                
+            </div>  
+              
+            <!-- Social login buttons -->
+            <div class="social-login">
+                <img class="google" src="assets/google.png" alt="Google">
+                <img class="apple" src="assets/apple.png" alt="Apple">
+                <img class="facebook" src="assets/facebook.png" alt="Facebook">
+            </div>
+            <!-- Login form -->
+            <div>
+                <div class="input-group">
+                    <p class="email">Email</p>
+                    <input type="email" >
+                </div>
+                <div class="input-group">
+                    <p class="password">Contraseña</p>
+                    <input type="password">
+                </div>
+                <button type="submit" class="login-btn">Acceder</button>
+            </div>
+            <!-- Link to forgot password page -->
+            <a href="#" class="forgot-password">Olvidé mi contraseña</a>
+            <hr>
+            <a href="#" class="forgot-password">¿No tienes cuenta?</a><!-- Link to create a new account -->
+            <button href="#" class="create-account">Crear una cuenta</button>
+        </div>
+    </div>
+</body>
+</html>
