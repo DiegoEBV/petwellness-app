@@ -3,7 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomevetComponent } from './homevet/homevet.component';
 
 const routes: Routes = [
-  {path: 'homevet', component: HomevetComponent},
+  {path: 'homeduenio', loadChildren: () => import('./homeduenio/homeduenio.module').then(m => m.HomeduenioModule) },
+  { path: 'homevet', loadChildren: () => import('./homevet/homevet.module').then(m => m.HomevetModule) },
 ];
 
 @NgModule({

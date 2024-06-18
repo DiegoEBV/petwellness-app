@@ -1,0 +1,81 @@
+.appointments {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left; 
+    max-height: 200px; 
+    overflow-y: auto;
+  }
+  
+  .appointments::-webkit-scrollbar {
+    width: 6px; 
+  }
+  
+  .appointments::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px; 
+  }
+  
+  .appointments::-webkit-scrollbar-thumb {
+    background: #003049;
+    border-radius: 10px;
+  }
+  
+  .appointments::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+  }
+  
+  .appointments li {
+    margin-bottom: 10px;
+  }
+  
+  .task-container {
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+  }
+  
+  .icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #54AFB2;
+    border-radius: 8px;
+    margin-right: 10px;
+  }
+  
+  .icon img {
+    width: 24px;
+    height: 24px;
+  }
+  
+  .task-details {
+    flex-grow: 1;
+  }
+  
+  .task-details p {
+    margin: 0;
+    font-size: 16px;
+    color: #003049;
+    font-weight: 600;
+  }
+  
+  .task-details time {
+    font-size: 12px;
+    color: #676D89;
+  }
+  
+  .external-link {
+    font-size: 16px;
+    color: #003049;
+    cursor: pointer;
+  }
+  
+  .add-reminder:hover {
+    text-decoration: underline;
+  }
