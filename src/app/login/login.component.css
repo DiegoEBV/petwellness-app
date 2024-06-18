@@ -110,6 +110,10 @@ h2 {
     width: 300px;
 }
 
+.input-group input:hover {
+    background: #d9d9d9;
+}
+
 .login-btn {
     width: 460px;
     height: 60px;
@@ -121,6 +125,10 @@ h2 {
     font-size: 16px;
     cursor: pointer;
     margin-bottom: 20px;
+}
+
+.login-btn:active {
+    background: #5CB4B5;
 }
 
 .forgot-password {
@@ -147,4 +155,9 @@ hr {
     color: white;
     font-size: 16px;
     cursor: pointer;
+}
+
+.create-account:active {
+    background: #D3EFF3;
+    color: #5CB4B5;
 }
