@@ -1,0 +1,19 @@
+<div>
+    <main>
+        <div class="dashboard">
+            <section class="dashboard-item proximas-consultas">
+                <h2>Próximas Consultas</h2>
+                <div class="consultas-list">
+                  <div class="consulta-card" *ngFor="let consulta of consultasvet">
+                    <img [src]="consulta.img" [alt]="consulta.nombre">
+                    <div class="appointment-details">
+                      <p>{{ consulta.nombre }}</p>
+                      <time>{{ consulta.fecha }} | {{ consulta.hora }}</time>
+                    </div>
+                    <button>Historial Clínico</button>
+                  </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</div>

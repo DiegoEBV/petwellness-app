@@ -7,21 +7,28 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { MaterialModule } from './material/material.module';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { HomevetComponent } from './homevet/homevet.component';
 import { NotificationNavbarComponent } from './shared/navbar/notification-navbar/notification-navbar.component';
+import { HomeduenioModule } from './homeduenio/homeduenio.module';
+import { HttpClientModule } from '@angular/common/http';
+import { HomevetModule } from './homevet/homevet.module';
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     FooterComponent,
-    HomevetComponent,
     NotificationNavbarComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    HomeduenioModule,
+    HomevetModule,
+    HttpClientModule
   ],
   providers: [
     provideAnimationsAsync()
