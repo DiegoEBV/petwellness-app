@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrl: './recovery.component.css'
 })
 export class RecoveryComponent {
+  activeTab: string = 'veterinario'; // Puedes establecer un valor predeterminado aquí
 
+  changeTab(tabName: string) {
+    this.activeTab = tabName;
+  }
 }
