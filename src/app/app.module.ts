@@ -11,6 +11,7 @@ import { HomevetComponent } from './homevet/homevet.component';
 import { NotificationNavbarComponent } from './shared/navbar/notification-navbar/notification-navbar.component';
 import { LoginComponent } from './login/login.component';
 import { SigninComponent } from './signin/signin.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
