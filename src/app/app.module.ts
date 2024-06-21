@@ -15,6 +15,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AccountRecoveryComponent } from './account-recovery/account-recovery.component';
 import { RecuperarCuentaComponent } from './recuperar-cuenta/recuperar-cuenta.component';
 import { SigninComponent } from './signin/signin.component';
+import { SecurityComponent } from './security/security.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SigninComponent } from './signin/signin.component';
     AccountRecoveryComponent,
     RecuperarCuentaComponent,
     SigninComponent,
+    SecurityComponent,
   ],
   imports: [
     BrowserModule,
