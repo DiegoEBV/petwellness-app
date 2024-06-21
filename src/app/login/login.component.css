@@ -91,8 +91,11 @@ h2 {
     color: white;
 }
 
-.input-group {
-    margin-bottom: 80px;
+.input-group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
 }
 
 .input-group input {
@@ -101,13 +104,15 @@ h2 {
     border-radius: 25px;
     background-color: #f0f0f0;
     border: 1px solid transparent;
+    margin-bottom: 60px;
 }
 
-.input-group p{
-    margin-left: 20px;
-    margin-bottom: 10px;
+.input-group label{
     color: #333;
     width: 300px;
+    margin-right: 350px;
+    align-items: left;
+    font-weight: 70%;
 }
 
 .input-group input:hover {
@@ -129,6 +134,12 @@ h2 {
 
 .login-btn:active {
     background: #5CB4B5;
+}
+
+.login-btn:disabled {
+    cursor: default;
+    background: #D3EFF3;
+    color: white;
 }
 
 .forgot-password {

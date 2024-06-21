@@ -19,7 +19,7 @@
                     <p class="titulo">Correo electrónico</p>
                     <div class="text">
                         <img src="assets/Letter.png" alt="Ícono de correo electrónico" class="icon_mail">
-                        <button class="correo" [class.active]="activeTab === 'v_correo'" (click)="changeTab('v_correo')">
+                        <button class="correo" routerLink="../account-recovery">
                             <p>Enviar código de seguridad al correo</p>
                         </button>
                     </div>
@@ -29,21 +29,15 @@
                     <p class="titulo">Mensaje de texto</p>
                     <div class="text">
                         <img src="assets/phone.png" alt="Ícono de teléfono" class="icon_tlf">
-                        <button class="tlf" [class.active]="activeTab === 'v_tlf'" (click)="changeTab('v_tlf')">
+                        <button class="tlf" routerLink="../account-recovery">
                             Enviar código de seguridad al teléfono
                         </button>
                     </div>
                 </div>
-                <div *ngIf="activeTab === 'v_correo'">
-                    <p>hola1</p>
-                </div>
-                <div *ngIf="activeTab === 'v_tlf'">
-                    <p>hola</p>
-                </div>
-    
                 <div class="buttons">
-                    <button class="resend">Reenviar</button>
-                    <button class="cancel">Cancelar</button>
+                    <button class="cancel" routerLink="../login">
+                        Cancelar
+                    </button>
                 </div>
             </div>
         </div>

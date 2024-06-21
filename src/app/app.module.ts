@@ -11,6 +11,9 @@ import { HomevetComponent } from './homevet/homevet.component';
 import { NotificationNavbarComponent } from './shared/navbar/notification-navbar/notification-navbar.component';
 import { LoginComponent } from './login/login.component';
 import { RecoveryComponent } from './recovery/recovery.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { AccountRecoveryComponent } from './account-recovery/account-recovery.component';
+import { RecuperarCuentaComponent } from './recuperar-cuenta/recuperar-cuenta.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +24,14 @@ import { RecoveryComponent } from './recovery/recovery.component';
     NotificationNavbarComponent,
     LoginComponent,
     RecoveryComponent,
+    AccountRecoveryComponent,
+    RecuperarCuentaComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
   ],
   providers: [
     provideAnimationsAsync()

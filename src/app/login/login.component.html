@@ -41,18 +41,26 @@
             </div>
             <!-- Login form -->
             <div>
-                <div class="input-group">
-                    <p class="email">Email</p>
-                    <input type="email" >
-                </div>
-                <div class="input-group">
-                    <p class="password">Contraseña</p>
-                    <input type="password">
-                </div>
-                <button type="submit" class="login-btn">Acceder</button>
+                <form [formGroup]="formGroup" (ngSubmit)="submitTransfer()">
+                    <div class="input-group">
+                        <label for="">Email</label>
+                        <br>
+                        <input formControlName="email">
+                        <br>
+
+                        <label for="">Contraseña</label>
+                        <br>
+                        <input formControlName="password">
+                    </div>
+
+                    <button type="submit" class="login-btn" [disabled]="!formGroup.valid" routerLink="../homevet">
+                        Acceder
+                    </button>
+                </form>
+                
             </div>
             <!-- Link to forgot password page -->
-            <a href="#" class="forgot-password">Olvidé mi contraseña</a>
+            <a routerLink="../recovery" class="forgot-password">Olvidé mi contraseña</a>
             <hr>
             <a href="#" class="forgot-password">¿No tienes cuenta?</a><!-- Link to create a new account -->
             <button href="#" class="create-account">Crear una cuenta</button>
