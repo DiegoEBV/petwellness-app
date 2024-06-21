@@ -16,6 +16,7 @@ import { AccountRecoveryComponent } from './account-recovery/account-recovery.co
 import { RecuperarCuentaComponent } from './recuperar-cuenta/recuperar-cuenta.component';
 import { SigninComponent } from './signin/signin.component';
 import { SecurityComponent } from './security/security.component';
+import { SecurityCodeComponent } from './security-code/security-code.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { SecurityComponent } from './security/security.component';
     RecuperarCuentaComponent,
     SigninComponent,
     SecurityComponent,
+    SecurityCodeComponent,
   ],
   imports: [
     BrowserModule,
