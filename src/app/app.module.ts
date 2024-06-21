@@ -14,6 +14,7 @@ import { RecoveryComponent } from './recovery/recovery.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AccountRecoveryComponent } from './account-recovery/account-recovery.component';
 import { RecuperarCuentaComponent } from './recuperar-cuenta/recuperar-cuenta.component';
+import { SigninComponent } from './signin/signin.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { RecuperarCuentaComponent } from './recuperar-cuenta/recuperar-cuenta.co
     RecoveryComponent,
     AccountRecoveryComponent,
     RecuperarCuentaComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,
