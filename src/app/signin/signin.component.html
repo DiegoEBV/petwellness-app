@@ -23,7 +23,10 @@
                 <img class="facebook" src="assets/facebook.png" alt="Facebook">
             </div>
             <div>
-                <div *ngIf="activeTab === 'duenos'">
+                <div *ngIf="activeTab === 'duenos'"> <!--Formulario para dueños -->
+                    <form [formGroup]="formDuenos" (ngSubmit)="submitTransferD()">
+                        
+                    </form>
                     <div class="input-group">
                         <p class="nombre">Nombres</p>
                         <input type="nombre" >
@@ -44,7 +47,7 @@
                         <input type="c_password" >
                     </div>
                 </div>
-                <div *ngIf="activeTab === 'albergues'">
+                <div *ngIf="activeTab === 'albergues'"> <!--Formulario para albergues -->
                     <div class="input-group">
                         <p class="nombre">Nombres</p>
                         <input type="nombre" >
@@ -71,7 +74,7 @@
                         <input type="c_password" >
                     </div>
                 </div>
-                <div *ngIf="activeTab === 'veterinario'">
+                <div *ngIf="activeTab === 'veterinario'"> <!--Formulario para veterinarios -->
                     <div class="input-group">
                         <p class="nombre">Nombres</p>
                         <input type="nombre" >
