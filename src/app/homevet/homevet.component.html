@@ -22,7 +22,7 @@
         <section class="dashboard-item calendar">
           <div class="calendar-header">
             <h2>Abril 2024 <span class="dropdown-icon">▼</span></h2>
-            <button class="add-reminder">+ Add recordatorio</button>
+            <button class="add-reminder" (click)="openDialog()">+ Add recordatorio</button>
           </div>
           <div class="calendar">
             <div class="calendar-header">
@@ -31,7 +31,7 @@
                 <li *ngFor="let day of days">{{ day }}</li>
               </ul>
               <span class="next" (click)="next()">&gt;</span>
-            </div>
+            </div> 
             <div class="calendar-body">
               <ul class="dates">
                 <li *ngFor="let date of dates; let i = index" [class.active]="i === activeIndex">

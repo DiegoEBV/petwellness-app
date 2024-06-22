@@ -112,3 +112,14 @@
   width: 40px;
   border-radius: 50%;
 }
+
+.shopping-cart button {
+  background: #54AFB2;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  color: #fff;
+}

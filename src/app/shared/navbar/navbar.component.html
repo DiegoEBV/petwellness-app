@@ -13,6 +13,9 @@
       <button class="search-button"><mat-icon aria-hidden="false" fontIcon="search"></mat-icon></button>
       <input type="text" class="search-input" placeholder="Buscar...">
     </div>
+    <div *ngIf="showCartIcon" class="shopping-cart">
+      <button><mat-icon aria-hidden="false" fontIcon="shopping_cart"></mat-icon></button>
+    </div>
     <app-notification-navbar></app-notification-navbar>
     <div class="user-profile">
       <img src="assets/doct.png" alt="User Avatar">

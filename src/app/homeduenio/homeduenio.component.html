@@ -1,5 +1,5 @@
 <!-- home.component.html -->
-<div class="homevet">
+<div class="homeduenio">
     <header>
       <h1>Bienvenido <span>Jose y Chewbacca!</span></h1>
     </header>
@@ -15,7 +15,7 @@
           <div class="tareas-de-hoy">
             <div class="header">
               <h2>Tareas de Hoy</h2>
-              <span class="task-count">12</span>
+              <span class="task-count">{{ tasks.length }}</span>
             </div>
             <ul class="tasks">
               <li *ngFor="let task of tasks">
