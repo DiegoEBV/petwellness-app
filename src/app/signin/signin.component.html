@@ -49,7 +49,7 @@
                         <label for="">Confirmación de contraseña</label>
                         <br>
                         <input formControlName="c_contrasena">
-                        <button type="submit" class="create-btn" [disabled]="!formAlbergue.valid" routerLink="">
+                        <button type="submit" class="create-btn" [disabled]="!formDuenos.valid" routerLink="../security">
                             Crear
                         </button>
                     </div>
@@ -90,14 +90,14 @@
                             <label for="">Confirmación de contraseña</label>
                             <br>
                             <input formControlName="c_contrasena">
-                            <button type="submit" class="create-btn" [disabled]="!formAlbergue.valid" routerLink="">
+                            <button type="submit" class="create-btn" [disabled]="!formAlbergue.valid" routerLink="../security">
                                 Crear
                             </button>
                         </div>
                        </form>
                 </div>
                 <div *ngIf="activeTab === 'veterinario'"> <!--Formulario para veterinarios -->
-                    <form [formGroup]="formAlbergue" >
+                    <form [formGroup]="formVeterinario" >
                         <div class="input-group">
                             <label for="">Nombres</label>
                             <br>
@@ -115,8 +115,6 @@
                             <br>
                             <input formControlName="tlf">
                             <br>
-
-
                             <label for="">Especialidad</label>
                             <br>
                             <input formControlName="especialidad">
@@ -133,16 +131,15 @@
                             <br>
                             <input formControlName="c_contrasena">
 
-                            <button type="submit" class="create-btn" [disabled]="!formAlbergue.valid" routerLink="">
-                                Crear
-                            </button>
+                            <button type="submit" class="create-btn" [disabled]="!formVeterinario.valid" routerLink="../security"> Crear </button>
                         </div>
                        </form>
+                       
                 </div>  
             </div>
             <hr>
             <a class="your-account">¿Ya tienes cuenta?</a><!-- Link to create a new account -->
-            <button href="#" class="access-account">Accede a tu cuenta</button>
+            <button  routerLink="../login" class="access-account">Accede a tu cuenta</button>
         </div>
     </div>
 </body>

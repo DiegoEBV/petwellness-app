@@ -1,6 +1,5 @@
-import { Component, inject, OnInit } from '@angular/core';
-import { FormBuilder, Validators, FormGroup, FormControl, AbstractControl} from '@angular/forms';
-import { loginValidator } from './login-custom-validation';
+import { Component, inject } from '@angular/core';
+import { FormBuilder, Validators} from '@angular/forms';
 
 @Component({
   selector: 'app-login',
