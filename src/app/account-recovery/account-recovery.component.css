@@ -3,11 +3,11 @@ body {
     justify-content: center;
     padding-bottom: 100px;
     align-items: center;
-    background: #d9d9d9 no-repeat center center fixed;
+    background: #d9d9d9;
     background-size: cover;
 }
 
-.login-container {
+.account-recovery-container {
     margin-top: 50px;
     display: flex;
     justify-content: center;
@@ -18,7 +18,7 @@ body {
     border-radius: 25px;
 }
 
-.login-box {
+.account-recovery-box {
     width: 720px;
     height: 850px;
     max-width: 720px;
@@ -94,19 +94,21 @@ input {
     border: 1px solid transparent;
     margin: 20px;
     font-size: 50px;
-
 }
 
 input:hover{
     background: #9F9F9F;
 }
+
 .texto {
     margin-bottom: 70px;
 }
+
 .reenviar{
     margin-top: 40px;
     margin-bottom: 100px;
 }
+
 .reenviar:hover{
     color: #0099B2;
     cursor: pointer;

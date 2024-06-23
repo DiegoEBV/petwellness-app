@@ -4,40 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetWellness Login</title>
-    <!-- Link to external CSS file -->
     <link rel="stylesheet" href="recuperar-cuenta.component.css">
-    <!-- Link to Google Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <!-- Container for the entire login box -->
-    <div class="login-container">
-        <!-- Login box with form and social login buttons -->
-        <div class="login-box">
-            <!-- PetWellness logo -->
+    <div class="recuperar-cuenta-container">
+        <div class="recuperar-cuenta-box">
             <img src="assets/logo.png" alt="PetWellness Logo" class="logo">
             <h2>Recuperar cuenta</h2>
             <p class="texto">Ingrese una nueva contraseña para recuperar su cuenta</p>
-            <!-- Tabs for different user types -->
             <div>
                 <form [formGroup]="inputRecuperarCuenta" (ngSubmit)="submitTransfer()">
                     <div class="input-group">
-                        <label for="">Ingrese la nueva contraseña</label>
+                        <label>Ingrese la nueva contraseña</label>
                         <br>
                         <input formControlName="contra">
                         <br>
-                        <label for="">Confirmar nueva contraseña</label>
+                        <label>Confirmar nueva contraseña</label>
                         <br>
                         <input formControlName="vcontra">
                     </div>
                     <div class="buttons">
                         <button class="cancelar" routerLink="../account-recovery">Cancelar</button>
-                        <button class="siguiente" type="submit" [disabled]="!inputRecuperarCuenta.valid" routerLink="../login">
+                        <button class="siguiente" routerLink="../login" type="submit" [disabled]="!inputRecuperarCuenta.valid">
                             Siguiente
                         </button>
                     </div>
                 </form>
-                
             </div>
         </div>
     </div>

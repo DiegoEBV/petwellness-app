@@ -5,11 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Verificacion de seguridad</title>
     <link rel="stylesheet" href="security-code.component.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-box">
+    <div class="security-code-container">
+        <div class="security-code-box">
             <img src="assets/logo.png" alt="Logo de PetWellness" class="logo">
             <h2>Verificación de seguridad</h2>
             <p class="texto">Ingrese el código enviado para iniciar sesión.</p>
@@ -23,7 +22,6 @@
                             <input formControlName="input4">
                         </div>
                         <p class="reenviar">Reenviar el código</p>
-                        
                         <p class="confirmacion">
                             Preguntarme por la verificación de seguridad cada vez
                             que inicio sesión
@@ -32,7 +30,7 @@
                 </div>
                 <div class="buttons">
                     <button class="cancelar" routerLink="../security">Cancelar</button>
-                    <button type="sumbmit" class="siguiente" [disabled]="!recoveryGroup.valid" routerLink="../signin">
+                    <button class="siguiente" routerLink="../login" type="sumbmit" [disabled]="!recoveryGroup.valid" >
                         Siguiente
                     </button>
                 </div>

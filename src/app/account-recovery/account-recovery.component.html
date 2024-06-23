@@ -2,14 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recuperar cuenta</title>
     <link rel="stylesheet" href="account-recovery.component.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-box">
+    <div class="account-recovery-container">
+        <div class="account-recovery-box">
             <img src="assets/logo.png" alt="Logo de PetWellness" class="logo">
             <h2>Recuperar contraseña</h2>
             <p class="texto">Ingrese el código enviado para recuperar su cuenta.</p>
@@ -23,7 +21,6 @@
                             <input formControlName="input4">
                         </div>
                         <p class="reenviar">Reenviar el código</p>
-                        
                         <p class="confirmacion">
                             Preguntarme por la verificación de seguridad cada vez
                             que inicio sesión
@@ -32,7 +29,7 @@
                 </div>
                 <div class="buttons">
                     <button class="cancelar" routerLink="../recovery">Cancelar</button>
-                    <button type="sumbmit" class="siguiente" [disabled]="!recoveryGroup.valid" routerLink="../recuperar-cuenta">
+                    <button class="siguiente" routerLink="../recuperar-cuenta" type="sumbmit" [disabled]="!recoveryGroup.valid" >
                         Siguiente
                     </button>
                 </div>

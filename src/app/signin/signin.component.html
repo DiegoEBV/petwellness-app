@@ -5,12 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PetWellness signin</title>
     <link rel="stylesheet" href="signin.component.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body{
+            background-image: url('assets/fondo_duenos.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
 </head>
 <body>
-    <div class="login-container">
-        <div class="login-box">
-            <img src="assets/logo.png" alt="PetWellness Logo" class="logo">
+    <div class="signin-container">
+        <div class="signin-box">
+            <img class="logo" src="assets/logo.png" alt="PetWellness Logo" >
             <h2>Crea una cuenta</h2>
             <div class="tabs">
                 <button class="tab" [class.active]="activeTab === 'duenos'" (click)="changeTab('duenos')">Dueños</button>
@@ -46,14 +54,13 @@
                         <br>
                         <input formControlName="contrasena">
                         <br>
-                        <label for="">Confirmación de contraseña</label>
+                        <label class = "c_contrasena" for="">Confirmación de contraseña</label>
                         <br>
                         <input formControlName="c_contrasena">
                         <button type="submit" class="create-btn" [disabled]="!formDuenos.valid" routerLink="../security">
                             Crear
                         </button>
                     </div>
-
                    </form>
                 </div>
                 <div *ngIf="activeTab === 'albergues'"> <!--Formulario para albergues -->
@@ -130,15 +137,13 @@
                             <label for="" class="confirmacion">Confirmación de contraseña</label>
                             <br>
                             <input formControlName="c_contrasena">
-
                             <button type="submit" class="create-btn" [disabled]="!formVeterinario.valid" routerLink="../security"> Crear </button>
                         </div>
                        </form>
-                       
                 </div>  
             </div>
             <hr>
-            <a class="your-account">¿Ya tienes cuenta?</a><!-- Link to create a new account -->
+            <a class="your-account">¿Ya tienes cuenta?</a>
             <button  routerLink="../login" class="access-account">Accede a tu cuenta</button>
         </div>
     </div>
