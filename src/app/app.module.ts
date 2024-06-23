@@ -11,8 +11,13 @@ import { NotificationNavbarComponent } from './shared/navbar/notification-navbar
 import { HomeduenioModule } from './homeduenio/homeduenio.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomevetModule } from './homevet/homevet.module';
-
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { ConsultasComponent } from './consultas/consultas.component';
+import { FormsModule } from '@angular/forms';
+import { VideoConsultaComponent } from './video-consulta/video-consulta.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ConsultaPosteriorComponent } from './consulta-posterior/consulta-posterior.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +25,10 @@ import { HomevetModule } from './homevet/homevet.module';
     NavbarComponent,
     FooterComponent,
     NotificationNavbarComponent,
+    ConsultasComponent,
+    VideoConsultaComponent,
+    ConsultaPosteriorComponent,
+
 
   ],
   imports: [
@@ -28,7 +37,12 @@ import { HomevetModule } from './homevet/homevet.module';
     MaterialModule,
     HomeduenioModule,
     HomevetModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCheckboxModule,
+    FormsModule,
+    MatIconModule,
+    MatSlideToggleModule
+
   ],
   providers: [
     provideAnimationsAsync()
