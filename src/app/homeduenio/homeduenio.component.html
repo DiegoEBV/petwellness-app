@@ -40,7 +40,7 @@
         <section class="dashboard-item calendar">
           <div class="calendar-header">
             <h2>Abril 2024 <span class="dropdown-icon">▼</span></h2>
-            <button class="add-reminder">+ Add recordatorio</button>
+            <button class="add-reminder" (click)="openDialog()">+ Add recordatorio</button>
           </div>
           <div class="calendar">
             <div class="calendar-header">
@@ -99,19 +99,39 @@
               <li (click)="selectTab('notas')" [class.active]="selectedTab === 'notas'">Notas</li>
             </ul>
             <div class="content">
-              <p *ngIf="selectedTab === 'resumen'">Ingresa algún detalle de la consulta a hacer ...</p>
-              <p *ngIf="selectedTab === 'fotos'">Cargue imágenes ...</p>
-              <p *ngIf="selectedTab === 'notas'">Ingresa alguna nota de la consulta a hacer ...</p>
+              <div *ngIf="selectedTab === 'resumen'">
+                <form class="example-form">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Ingresa algún detalle de la consulta a hacer ...</mat-label>
+                    <input matInput placeholder="" value="">
+                  </mat-form-field>
+                </form>
+              </div>
+              <div *ngIf="selectedTab === 'fotos'">
+                <form class="example-form">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Cargue imágenes ...</mat-label>
+                    <input matInput placeholder="" value="">
+                  </mat-form-field>
+                </form>
+              </div>
+              <div *ngIf="selectedTab === 'notas'">
+                <form class="example-form">
+                  <mat-form-field class="example-full-width">
+                    <mat-label>Ingresa alguna nota de la consulta a hacer ...</mat-label>
+                    <input matInput placeholder="" value="">
+                  </mat-form-field>
+                </form>
+              </div>
               <div class="buttons">
                 <button *ngIf="selectedTab === 'resumen'">Enviar</button>
                 <button *ngIf="selectedTab === 'fotos'">Enviar</button>
-                <button *ngIf="selectedTab === 'fotos'" (click)="triggerFileInput()">Subir</button>
+                <button class="subir" *ngIf="selectedTab === 'fotos'" (click)="triggerFileInput()">Subir</button>
                 <input type="file" #fileInput (change)="onFileSelected($event)" style="display: none;">
                 <button *ngIf="selectedTab === 'notas'">Enviar</button>
               </div>
             </div>
-          </div>
-                      
+          </div>        
         </section>
       </div>
     </main>

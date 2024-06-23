@@ -1,0 +1,16 @@
+<div class="cart-card">
+  <h3>Shopping Cart</h3>
+  <div *ngFor="let shop of shops">
+    <div class="cart-item">
+      <img [src]="shop.img" alt="{{ shop.nombre }}">
+      <div class="item-details">
+        <p>{{ shop.nombre }}</p>
+        <p>{{ shop.precio }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="cart-actions">
+    <button class="btn btn-primary" (click)="goToCheckout()">Ir a pagar</button>
+    <button class="btn btn-secondary" (click)="continueShopping()">Continuar comprando</button>
+  </div>
+</div>

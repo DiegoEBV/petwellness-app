@@ -11,7 +11,7 @@ import { NotificationNavbarComponent } from './shared/navbar/notification-navbar
 import { HomeduenioModule } from './homeduenio/homeduenio.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomevetModule } from './homevet/homevet.module';
-import { HomevetComponent } from './homevet/homevet.component';
+import { TiendaModule } from './tienda/tienda.module';
 
 
 
@@ -29,6 +29,7 @@ import { HomevetComponent } from './homevet/homevet.component';
     HomeduenioModule,
     HomevetModule,
     HttpClientModule,
+    TiendaModule,
   ],
   providers: [
     provideAnimationsAsync()

@@ -3,18 +3,21 @@ import { CommonModule } from '@angular/common';
 
 import { TiendaRoutingModule } from './tienda-routing.module';
 import { TiendaComponent } from './tienda.component';
+import { ViewToCarComponent } from './components/view-to-car/view-to-car.component';
 
 
 @NgModule({
   declarations: [
-    TiendaComponent
+    TiendaComponent,
+    ViewToCarComponent, 
   ],
   imports: [
     CommonModule,
-    TiendaRoutingModule
+    TiendaRoutingModule,
   ],
   exports: [
-    TiendaComponent
+    TiendaComponent,
+    ViewToCarComponent,
   ]
 })
 export class TiendaModule { }
