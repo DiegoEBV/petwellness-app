@@ -15,3 +15,4 @@ export class VideoConsultaComponent {
     this.router.navigate(['/consulta-posterior']); // Navega al nuevo componente
   }
 }
+ 
