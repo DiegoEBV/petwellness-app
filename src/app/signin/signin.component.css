@@ -2,9 +2,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: url('C:/Users/bance/Documents/petwellness-app/src/assets/login_background.png') no-repeat center center fixed;
+    background: url('../../assets/login_background.png') no-repeat center center fixed;
     background-size: cover;
 }
+
+
 
 .login-container {
     margin-top: 50px;
