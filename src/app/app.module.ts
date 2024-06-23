@@ -15,6 +15,9 @@ import { PerfilPacienteComponent } from './perfil-paciente/perfil-paciente.compo
 import { InformacionGeneralComponent } from './informacion-general/informacion-general.component';
 import { NotasConsultaComponent } from './notas-consulta/notas-consulta.component';
 import { PlanesAccionComponent } from './planes-accion/planes-accion.component';
+import { HistorialMedicoComponent } from './historial-medico/historial-medico.component';
+import { ArchivosComponent } from './archivos/archivos.component';
+import { EstadisticaComponent } from './estadistica/estadistica.component';
 
   
 
@@ -28,6 +31,9 @@ import { PlanesAccionComponent } from './planes-accion/planes-accion.component';
     InformacionGeneralComponent,
     NotasConsultaComponent,
     PlanesAccionComponent,
+    HistorialMedicoComponent,
+    ArchivosComponent,
+    EstadisticaComponent,
 
   ],
   imports: [

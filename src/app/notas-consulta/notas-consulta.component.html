@@ -1,1 +1,24 @@
-<p>notas-consulta works!</p>
+<div class="container">
+    <aside class="sidebar">
+        <h1>Perfil del paciente</h1>
+        <div class="profile-pic">
+            <img src="assets/chewbacca.png" alt="Chewbacca">
+        </div>
+        <div class="profile-info">
+            <h2>Chewbacca</h2>
+            <p>5 años | Miraflores, Perú</p>
+        </div>
+        <div class="menu-item" [routerLink]="['/informacion-general']">Información general</div>
+        <div class="menu-item" [routerLink]="['/historial-medico']">Historial médico</div>
+        <div class="menu-item active" [routerLink]="['/notas-consulta']">Notas de consulta</div>
+        <div class="menu-item" [routerLink]="['/planes-accion']">Planes de acción</div>
+        <div class="menu-item" [routerLink]="['/archivos']">Archivos</div>
+        <div class="menu-item" [routerLink]="['/estadistica']">Estadísticas</div>
+    </aside>
+    <main class="content">
+        <header>
+            <button class="edit-btn">Editar información</button>
+        </header>
+    </main>
+</div>
+<router-outlet></router-outlet>
