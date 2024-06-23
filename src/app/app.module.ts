@@ -11,8 +11,12 @@ import { NotificationNavbarComponent } from './shared/navbar/notification-navbar
 import { HomeduenioModule } from './homeduenio/homeduenio.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomevetModule } from './homevet/homevet.module';
+import { PerfilPacienteComponent } from './perfil-paciente/perfil-paciente.component';
+import { InformacionGeneralComponent } from './informacion-general/informacion-general.component';
+import { NotasConsultaComponent } from './notas-consulta/notas-consulta.component';
+import { PlanesAccionComponent } from './planes-accion/planes-accion.component';
 
-
+  
 
 @NgModule({
   declarations: [
@@ -20,6 +24,10 @@ import { HomevetModule } from './homevet/homevet.module';
     NavbarComponent,
     FooterComponent,
     NotificationNavbarComponent,
+    PerfilPacienteComponent,
+    InformacionGeneralComponent,
+    NotasConsultaComponent,
+    PlanesAccionComponent,
 
   ],
   imports: [
