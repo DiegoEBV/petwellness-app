@@ -503,21 +503,13 @@ header h1 span {
 .patient-notes button:hover {
     background-color: #003049;
 }
-  
+ 
 @media (max-width: 1024px) {
   .dashboard {
     grid-template-columns: 1fr;
   }
 }
 
-.example-form {
-  padding: 10px;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #fff;
-  font-family: 'Open Sans', sans-serif;
-}
 .example-full-width {
   width: 100%;
 }
