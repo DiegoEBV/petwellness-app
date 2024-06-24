@@ -38,7 +38,7 @@ export class ConsultasComponent {
       this.router.navigate(['/videoconsulta']);
     } else {
       this.mostrarMensaje = true;
-      setTimeout(() => this.mostrarMensaje = false, 3000); // Ocultar mensaje después de 3 segundos
+      setTimeout(() => this.mostrarMensaje = false, 3000); 
     }
   }
 

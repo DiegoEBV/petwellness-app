@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -12,12 +11,10 @@ import { HomeduenioModule } from './homeduenio/homeduenio.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomevetModule } from './homevet/homevet.module';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { ConsultasComponent } from './consultas/consultas.component';
 import { FormsModule } from '@angular/forms';
-import { VideoConsultaComponent } from './video-consulta/video-consulta.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { ConsultaPosteriorComponent } from './consulta-posterior/consulta-posterior.component';
+import { ConsultasVetModule } from './consultas-vet/consultas-vet.module';
 
 @NgModule({
   declarations: [
@@ -25,11 +22,6 @@ import { ConsultaPosteriorComponent } from './consulta-posterior/consulta-poster
     NavbarComponent,
     FooterComponent,
     NotificationNavbarComponent,
-    ConsultasComponent,
-    VideoConsultaComponent,
-    ConsultaPosteriorComponent,
-
-
   ],
   imports: [
     BrowserModule,
@@ -41,8 +33,8 @@ import { ConsultaPosteriorComponent } from './consulta-posterior/consulta-poster
     MatCheckboxModule,
     FormsModule,
     MatIconModule,
-    MatSlideToggleModule
-
+    MatSlideToggleModule,
+    ConsultasVetModule
   ],
   providers: [
     provideAnimationsAsync()
