@@ -1,0 +1,29 @@
+<div class="video-consulta">
+    <h2>Video Consulta {{ pacienteNombre }} • Hoy {{ horaConsulta }}</h2>
+    <div class="video-container">
+      <div class="video-main">
+        <img src="assets/video_main.jpg" alt="Video Main">
+      </div>
+      <div class="video-side">
+        <img src="assets/video_side1.jpeg" alt="Video Side 1">
+        <img src="assets/video_side2.jpeg" alt="Video Side 2">
+      </div>
+    </div>
+    <div class="video-controls">
+      <button mat-icon-button class="control-icon rec">
+        <mat-icon>videocam</mat-icon>
+      </button>
+      <button mat-icon-button class="control-icon mic">
+        <mat-icon>mic</mat-icon>
+      </button>
+      <button mat-icon-button class="control-icon cam">
+        <mat-icon>photo_camera</mat-icon>
+      </button>
+      <button mat-icon-button class="control-icon end-call" (click)="finalizarLlamada()">
+        <mat-icon>call_end</mat-icon>
+      </button>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+
+  

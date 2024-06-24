@@ -1,0 +1,27 @@
+<div class="background">
+    <div class="container">
+      <div class="consultas-card">
+        <h2>Prepárese para la consulta</h2>
+        <div class="header">
+          <p class="info">George • Hoy 9:00 AM</p>
+          <mat-slide-toggle (change)="toggleAll($event.checked)" class="toggle">¿Ha completado todo?</mat-slide-toggle>
+        </div>
+        
+        <ul class="tareas">
+          <li *ngFor="let tarea of tareas" class="tarea">
+            {{ tarea }}
+            <mat-checkbox [(ngModel)]="tareaCompleta[tarea]" class="custom-checkbox"></mat-checkbox>
+          </li>
+        </ul>
+        
+        <div class="button-container">
+          <p *ngIf="mostrarMensaje" class="mensaje">Revisa todos los puntos</p>
+          <button (click)="iniciarConsulta()" class="iniciar-consulta">Iniciar consulta</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+
+
+  

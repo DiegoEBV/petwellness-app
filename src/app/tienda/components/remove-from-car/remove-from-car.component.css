@@ -1,0 +1,11 @@
+.delete-button {
+    background: transparent;
+    border: none;
+    color: #000;
+    cursor: pointer;
+}
+  
+.delete-button .fa-trash-alt {
+    font-size: 1.2em;
+}
+  
