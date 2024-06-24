@@ -10,8 +10,9 @@ import { SecurityComponent } from './security/security.component';
 import { SecurityCodeComponent } from './security-code/security-code.component';
 
 const routes: Routes = [
-  {path: 'homeduenio', loadChildren: () => import('./homeduenio/homeduenio.module').then(m => m.HomeduenioModule) },
+  { path: 'homeduenio', loadChildren: () => import('./homeduenio/homeduenio.module').then(m => m.HomeduenioModule) },
   { path: 'homevet', loadChildren: () => import('./homevet/homevet.module').then(m => m.HomevetModule) },
+  { path: 'consultas-vet', loadChildren: () => import('./consultas-vet/consultas-vet.module').then(m => m.ConsultasVetModule) },
   {path: 'login', component: LoginComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'recovery', component: RecoveryComponent},
@@ -20,7 +21,7 @@ const routes: Routes = [
   {path: 'signin', component: SigninComponent},
   {path: 'security', component: SecurityComponent},
   {path: 'security-code', component: SecurityCodeComponent}
-]
+];
 
 
 @NgModule({

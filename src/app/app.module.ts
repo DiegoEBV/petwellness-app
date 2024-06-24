@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
@@ -19,6 +18,11 @@ import { SecurityCodeComponent } from './security-code/security-code.component';
 import { HomeduenioModule } from './homeduenio/homeduenio.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomevetModule } from './homevet/homevet.module';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { ConsultasVetModule } from './consultas-vet/consultas-vet.module';
 import { TiendaModule } from './tienda/tienda.module';
 
 @NgModule({
@@ -43,6 +47,11 @@ import { TiendaModule } from './tienda/tienda.module';
     HomeduenioModule,
     HomevetModule,
     HttpClientModule,
+    MatCheckboxModule,
+    FormsModule,
+    MatIconModule,
+    MatSlideToggleModule,
+    ConsultasVetModule
     TiendaModule,
   ],
   providers: [
