@@ -158,3 +158,13 @@ h1 {
     line-height: 22.5px; /* 112.5% */
     letter-spacing: -0.27px;
 }
+
+.rounded-border {
+    border-radius: 15px;
+    border: 2px solid #ccc;
+    padding: 5px;
+    display: block;
+    margin: 0 auto; /* Centrar la imagen */
+    max-width: 80%; /* Hacer que la imagen sea responsiva */
+    height: auto;
+}
