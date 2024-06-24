@@ -9,9 +9,13 @@ import { SigninComponent } from './signin/signin.component';
 import { SecurityComponent } from './security/security.component';
 import { SecurityCodeComponent } from './security-code/security-code.component';
 
+
 const routes: Routes = [
   { path: 'homeduenio', loadChildren: () => import('./homeduenio/homeduenio.module').then(m => m.HomeduenioModule) },
   { path: 'homevet', loadChildren: () => import('./homevet/homevet.module').then(m => m.HomevetModule) },
+<<<<<<< feature/informacion-general-duenio-
+  { path: 'perfil-duenio', loadChildren: () => import('./perfil-duenio/perfil-duenio.module').then(m => m.PerfilDuenioModule) },
+=======
   { path: 'consultas-vet', loadChildren: () => import('./consultas-vet/consultas-vet.module').then(m => m.ConsultasVetModule) },
   {path: 'login', component: LoginComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'},
@@ -21,6 +25,7 @@ const routes: Routes = [
   {path: 'signin', component: SigninComponent},
   {path: 'security', component: SecurityComponent},
   {path: 'security-code', component: SecurityCodeComponent}
+>>>>>>> develop
 ];
 
 
