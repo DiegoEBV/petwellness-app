@@ -1,0 +1,24 @@
+<div class="antes-consulta">
+    <div class="video-container">
+      <img src="assets/video_side1.jpeg" alt="Perro">
+      <img src="assets/video_side2.jpeg" alt="Persona">
+    </div>
+    <div class="controls">
+      <button class="control-button">
+        <mat-icon>mic_off</mat-icon>
+      </button>
+      <button class="control-button">
+        <mat-icon>camera_alt</mat-icon>
+      </button>
+    </div>
+    <div class="bottom-controls">
+      <button class="bottom-button">
+        Conectar cámara de aplicativo móvil
+      </button>
+      <button class="bottom-button" (click)="iniciarConsulta('George')">
+        Iniciar Consulta
+      </button>
+    </div>
+  </div>
+  <router-outlet></router-outlet>
+  

@@ -11,8 +11,9 @@ import { NotificationNavbarComponent } from './shared/navbar/notification-navbar
 import { HomeduenioModule } from './homeduenio/homeduenio.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomevetModule } from './homevet/homevet.module';
-
-
+import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { ConsultasDuenoModule } from './consultas-dueno/consultas-dueno.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,10 @@ import { HomevetModule } from './homevet/homevet.module';
     MaterialModule,
     HomeduenioModule,
     HomevetModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    MatIconModule,
+    ConsultasDuenoModule,
   ],
   providers: [
     provideAnimationsAsync()

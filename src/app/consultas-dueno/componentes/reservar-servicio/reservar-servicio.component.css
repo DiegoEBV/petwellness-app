@@ -1,0 +1,93 @@
+body {
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; 
+    padding: 40px 80px; 
+    gap: 40px; /* Espacio entre los dos grids */
+  }
+  
+  .left-panel {
+    width: 42%; 
+    background-color: #e0e0e0;
+    border-radius: 30px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  }
+  
+  .right-panel {
+    width: 42%; 
+    background-color: #e0e0e0; 
+    border-radius: 30px; 
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-control {
+    width: calc(100% - 20px); 
+    padding: 15px; 
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 20px; 
+  }
+  
+  .btn-primary {
+    background-color: #5CB4B5; 
+    border-color: #5CB4B5;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #4aa2a3; 
+    border-color: #4aa2a3;
+  }
+  
+  .consulta {
+    display: flex;
+    justify-content: space-between;
+    padding: 30px; 
+    background-color: #5CB4B5; 
+    margin-bottom: 10px;
+    border-radius: 20px; 
+    cursor: pointer;
+    border: none;
+    width: 100%;
+    text-align: left;
+    font-size: 16px;
+    color: #fff;
+  }
+  
+  .consulta:hover {
+    background-color: #4aa2a3; 
+  }
+  
+  .consulta.selected {
+    background-color:#317c7d; 
+  }
+  
+  h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  
