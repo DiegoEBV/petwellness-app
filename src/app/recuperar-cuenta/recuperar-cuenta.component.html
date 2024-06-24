@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetWellness Login</title>
+    <link rel="stylesheet" href="recuperar-cuenta.component.css">
+</head>
+<body>
+    <div class="recuperar-cuenta-container">
+        <div class="recuperar-cuenta-box">
+            <img src="assets/logo.png" alt="PetWellness Logo" class="logo">
+            <h2>Recuperar cuenta</h2>
+            <p class="texto">Ingrese una nueva contraseña para recuperar su cuenta</p>
+            <div>
+                <form [formGroup]="inputRecuperarCuenta" (ngSubmit)="submitTransfer()">
+                    <div class="input-group">
+                        <label>Ingrese la nueva contraseña</label>
+                        <br>
+                        <input formControlName="contra">
+                        <br>
+                        <label>Confirmar nueva contraseña</label>
+                        <br>
+                        <input formControlName="vcontra">
+                    </div>
+                    <div class="buttons">
+                        <button class="cancelar" routerLink="../account-recovery">Cancelar</button>
+                        <button class="siguiente" routerLink="../login" type="submit" [disabled]="!inputRecuperarCuenta.valid">
+                            Siguiente
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
