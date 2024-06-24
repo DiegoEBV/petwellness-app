@@ -17,7 +17,7 @@ export class LoginComponent {
   private readonly formBuilder = inject(FormBuilder); 
 
   formGroup = this.formBuilder.group({
-    email: ['', Validators.required],
+    email: ['',[Validators.required, Validators.email]],
     password: ['', Validators.required]
   });
 

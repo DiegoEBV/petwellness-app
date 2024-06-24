@@ -30,4 +30,11 @@ export class AccountRecoveryComponent {
   } else{
     console.log('Correo inválido');};
 }
+
+restrictInput(event: any) {
+  const input = event.target as HTMLInputElement;
+  if (input.value.length > 1) {
+    input.value = input.value.slice(0, 1);
+  }
+}
 }

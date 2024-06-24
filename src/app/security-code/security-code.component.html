@@ -16,10 +16,10 @@
                 <div class="option">
                     <form [formGroup]="recoveryGroup" (ngSubmit)="submitTransfer()">
                         <div class="input-group">
-                            <input formControlName="input1">
-                            <input formControlName="input2">
-                            <input formControlName="input3">
-                            <input formControlName="input4">
+                            <input type = "number" (input)="restrictInput($event)" formControlName="input1">
+                            <input type = "number" (input)="restrictInput($event)" formControlName="input2">
+                            <input type = "number" (input)="restrictInput($event)" formControlName="input3">
+                            <input type = "number" (input)="restrictInput($event)" formControlName="input4">
                         </div>
                         <p class="reenviar">Reenviar el código</p>
                         <p class="confirmacion">
@@ -30,7 +30,7 @@
                 </div>
                 <div class="buttons">
                     <button class="cancelar" routerLink="../security">Cancelar</button>
-                    <button class="siguiente" routerLink="../login" type="sumbmit" [disabled]="!recoveryGroup.valid" >
+                    <button class="siguiente" routerLink="../login" type="submit" [disabled]="!recoveryGroup.valid" >
                         Siguiente
                     </button>
                 </div>

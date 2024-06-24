@@ -35,10 +35,18 @@
                         <label for="">Email</label>
                         <br>
                         <input formControlName="email">
+                        <div class="incorrect_email" *ngIf="formGroup.get('email')?.invalid && (formGroup.get('email')?.dirty || formGroup.get('email')?.touched)">
+                            <span *ngIf="formGroup.get('email')?.errors?.['required']">
+                              Este campo es requerido
+                            </span>
+                            <span *ngIf="formGroup.get('email')?.errors?.['email']">
+                              El correo electrónico no es válido
+                            </span>
+                          </div>
                         <br>
-                        <label for="">Contraseña</label>
+                        <label for="" >Contraseña</label>
                         <br>
-                        <input formControlName="password">
+                        <input class="contraseña" formControlName="password">
                     </div>
                     <button class="login-btn" type="submit" [disabled]="!formGroup.valid" routerLink="../homevet">
                         Acceder

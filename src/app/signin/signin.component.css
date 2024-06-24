@@ -18,7 +18,7 @@ body {
 
 .signin-box {
     width: 720px;
-    max-height: 1539px;
+    max-height: 2000px;
     max-width: 720px;
     padding: 20px;
     background: white;
@@ -175,4 +175,14 @@ hr {
     background: #D3EFF3;
     color: #5CB4B5;
     cursor: pointer;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-group span{
+    color: red;
 }

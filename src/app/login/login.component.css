@@ -18,7 +18,7 @@ body {
 
 .login-box {
     width: 720px;
-    height: 939px;
+    max-height: 1539px;
     max-width: 720px;
     padding: 20px;
     background: white;
@@ -103,7 +103,7 @@ h2 {
     border-radius: 25px;
     background-color: #f0f0f0;
     border: 1px solid transparent;
-    margin-bottom: 60px;
+    
 }
 
 .input-group label{
@@ -112,10 +112,18 @@ h2 {
     margin-right: 350px;
     align-items: left;
     font-weight: 70%;
+    margin-top: 30px;
 }
 
 .input-group input:hover {
     background: #d9d9d9;
+}
+
+.contraseña{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
 }
 
 .login-btn {
@@ -165,9 +173,15 @@ hr {
     color: white;
     font-size: 16px;
     cursor: pointer;
+    margin-bottom: 20px;
 }
 
 .create-account:active {
     background: #D3EFF3;
     color: #5CB4B5;
+}
+
+.incorrect_email{
+    color: red;
+    margin-top: 10px;
 }

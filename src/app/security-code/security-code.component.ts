@@ -1,14 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import {Validators, FormBuilder} from '@angular/forms';
+import {Validators, FormBuilder, FormGroup, AbstractControl} from '@angular/forms';
 
 @Component({
   selector: 'app-security-code',
   templateUrl: './security-code.component.html',
-  styleUrl: './security-code.component.css'
+  styleUrl: './security-code.component.css'  
 })
 export class SecurityCodeComponent {
   constructor(private router: Router) {}
+
   goToLogin() {
     this.router.navigate(['/login']);
   }
@@ -26,6 +27,13 @@ export class SecurityCodeComponent {
     if(this.recoveryGroup.valid){
       console.log(this.recoveryGroup.value);
   } else{
-    console.log('Correo inválido');};
-}
+    console.log('Correo inválido');};    
+  }
+
+  restrictInput(event: any) {
+    const input = event.target as HTMLInputElement;
+    if (input.value.length > 1) {
+      input.value = input.value.slice(0, 1);
+    }
+  }
 }

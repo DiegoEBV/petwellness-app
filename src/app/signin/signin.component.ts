@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, Validators} from '@angular/forms';
+import { FormBuilder, Validators, FormGroup,} from '@angular/forms';
 
 @Component({
   selector: 'app-signin',
@@ -18,54 +18,58 @@ export class SigninComponent {
   formDuenos = this.formBuilder.group({
     nombres: ['', Validators.required],
     apellidos: ['', Validators.required],
-    email: ['', Validators.required],
+    email: ['', [Validators.email, Validators.required]],
     tlf: ['', Validators.required],
     contrasena: ['', Validators.required],
     c_contrasena: ['', Validators.required]
-  });
+  }, { validator: this.passwordMatchValidator('contrasena', 'c_contrasena') });
 
   formAlbergue = this.formBuilder.group({
     nombres: ['', Validators.required],
     apellidos: ['', Validators.required],
-    email: ['', Validators.required],
-    tlf: ['', Validators.required],
+    email: ['', [Validators.email, Validators.required]],
+    tlf: ['',Validators.required],
     n_albergue: ['', Validators.required],
     t_albergue: ['', Validators.required],
     contrasena: ['', Validators.required],
     c_contrasena: ['', Validators.required]
-  });
+  }, { validator: this.passwordMatchValidator('contrasena', 'c_contrasena') });
 
   formVeterinario = this.formBuilder.group({
     nombres: ['', Validators.required],
     apellidos: ['', Validators.required],
-    email: ['', Validators.required],
+    email: ['', [Validators.email, Validators.required]],
     tlf: ['', Validators.required],
     especialidad: ['', Validators.required],
     institucion: ['', Validators.required],
-    contrasena: ['', Validators.required],
+    contrasena: ['', [Validators.required, Validators.minLength(6)]],
     c_contrasena: ['', Validators.required]
-  });
+  }, { validator: this.passwordMatchValidator('contrasena', 'c_contrasena') });
 
-
-  submitTransferD(){
-    if(this.formDuenos.valid){
-      console.log(this.formDuenos.value);
-  } else{
-    console.log('Correo inválido');};
+  restrictPhone(event: any) {
+    const input = event.target as HTMLInputElement;
+    if (input.value.length > 9) {
+      input.value = input.value.slice(0, 9);
+    }
   }
 
-  submitTransferV(){
-    if(this.formDuenos.valid){
-      console.log(this.formDuenos.value);
-  } else{
-    console.log('Correo inválido');};
+  // Función para validar que las contraseñas coincidan
+  private passwordMatchValidator(controlName: string, matchingControlName: string) {
+    return (formGroup: FormGroup) => {
+      const control = formGroup.controls[controlName];
+      const matchingControl = formGroup.controls[matchingControlName];
+
+      if (control.value !== matchingControl.value) {
+        matchingControl.setErrors({ passwordMismatch: true });
+      } else {
+        matchingControl.setErrors(null);
+      }
+    };
   }
 
-  submitTransferA(){
-    if(this.formDuenos.valid){
-      console.log(this.formDuenos.value);
-  } else{
-    console.log('Correo inválido');};
+  // Método para verificar si las contraseñas coinciden en cada formulario
+  passwordsMatch(form: FormGroup): boolean {
+    return form.controls['contrasena'].value === form.controls['c_contrasena'].value;
   }
-
 }
+

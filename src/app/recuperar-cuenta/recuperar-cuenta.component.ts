@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
-import {Validators, FormBuilder} from '@angular/forms';
+import {Validators, FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-recuperar-cuenta',
@@ -9,22 +8,38 @@ import {Validators, FormBuilder} from '@angular/forms';
 })
 export class RecuperarCuentaComponent {
 
-  activeTab: string = 'duenos'; // el formulario inicia en la pestaña dueños
-
-  changeTab(tabName: string) {
-    this.activeTab = tabName;
-  }
-  
   private readonly formBuilder = inject(FormBuilder); 
 
   inputRecuperarCuenta = this.formBuilder.group({
     contra: ['', Validators.required],
     vcontra: ['', Validators.required],
-  });
-  submitTransfer(){
-    if(this.inputRecuperarCuenta.valid){
-      console.log(this.inputRecuperarCuenta.value);
-  } else{
-    console.log('Correo inválido');};
+  }, {validator: this.passwordMatchValidator('contra', 'vcontra')});
+
+  
+ // Función para validar que las contraseñas coincidan
+ private passwordMatchValidator(controlName: string, matchingControlName: string) {
+  return (formGroup: FormGroup) => {
+    const control = formGroup.controls[controlName];
+    const matchingControl = formGroup.controls[matchingControlName];
+
+    if (control.value !== matchingControl.value) {
+      matchingControl.setErrors({ passwordMismatch: true });
+    } else {
+      matchingControl.setErrors(null);
+    }
+  };
+}
+
+// Método para verificar si las contraseñas coinciden en cada formulario
+passwordsMatch(form: FormGroup): boolean {
+  return form.controls['contra'].value === form.controls['vcontra'].value;
+}
+
+submitTransfer() {
+  if (this.inputRecuperarCuenta.valid) {
+    console.log(this.inputRecuperarCuenta.value);
+  } else {
+    console.log('Formulario inválido');
+  }
 }
 }
