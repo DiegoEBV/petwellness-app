@@ -11,6 +11,13 @@ import { NotificationNavbarComponent } from './shared/navbar/notification-navbar
 import { HomeduenioModule } from './homeduenio/homeduenio.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomevetModule } from './homevet/homevet.module';
+import { PerfilPacienteVetComponent } from './perfil-paciente-vet/perfil-paciente-vet.component';
+import { HistorialMedicoVetComponent } from './historial-medico-vet/historial-medico-vet.component';
+import { NotasConsultaVetComponent } from './notas-consulta-vet/notas-consulta-vet.component';
+import { PlanesAccionVetComponent } from './planes-accion-vet/planes-accion-vet.component';
+import { ArchivosVetComponent } from './archivos-vet/archivos-vet.component';
+import { EstadisticaVetComponent } from './estadistica-vet/estadistica-vet.component';
+import { InformacionGeneralVetComponent } from './informacion-general-vet/informacion-general-vet.component';
 
 
 
@@ -20,6 +27,13 @@ import { HomevetModule } from './homevet/homevet.module';
     NavbarComponent,
     FooterComponent,
     NotificationNavbarComponent,
+    PerfilPacienteVetComponent,
+    HistorialMedicoVetComponent,
+    NotasConsultaVetComponent,
+    PlanesAccionVetComponent,
+    ArchivosVetComponent,
+    EstadisticaVetComponent,
+    InformacionGeneralVetComponent,
 
   ],
   imports: [
