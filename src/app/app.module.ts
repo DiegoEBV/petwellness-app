@@ -19,6 +19,7 @@ import { SecurityCodeComponent } from './security-code/security-code.component';
 import { HomeduenioModule } from './homeduenio/homeduenio.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomevetModule } from './homevet/homevet.module';
+import { TiendaModule } from './tienda/tienda.module';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,6 @@ import { HomevetModule } from './homevet/homevet.module';
     NavbarComponent,
     FooterComponent,
     NotificationNavbarComponent,
-
     LoginComponent,
     RecoveryComponent,
     AccountRecoveryComponent,
@@ -34,7 +34,6 @@ import { HomevetModule } from './homevet/homevet.module';
     SigninComponent,
     SecurityComponent,
     SecurityCodeComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -43,8 +42,8 @@ import { HomevetModule } from './homevet/homevet.module';
     ReactiveFormsModule,
     HomeduenioModule,
     HomevetModule,
-    HttpClientModule
-
+    HttpClientModule,
+    TiendaModule,
   ],
   providers: [
     provideAnimationsAsync()
