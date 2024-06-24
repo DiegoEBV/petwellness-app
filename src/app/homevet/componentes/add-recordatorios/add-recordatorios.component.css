@@ -1,0 +1,65 @@
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #54AFB2;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.mat-dialog-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 15px;
+}
+
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+  color: #54AFB2;
+}
+
+.mat-dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 20px;
+}
+
+.mat-dialog-actions button {
+  background-color: #54AFB2;
+  color: white;
+  margin-left: 10px;
+  transition: background-color 0.3s;
+}
+
+.mat-dialog-actions button:hover {
+  background-color: #3a7d7f;
+}
+
+.icon-selection {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.icon-selection img {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  transition: transform 0.3s, border-color 0.3s, background-color 0.3s;
+}
+
+.icon-selection img.selected {
+  border-color: #54AFB2;
+  background-color: rgba(84, 175, 178, 0.1);
+  transform: scale(1.1);
+}

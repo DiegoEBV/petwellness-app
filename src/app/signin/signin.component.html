@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetWellness signin</title>
+    <link rel="stylesheet" href="signin.component.css">
+    <style>
+        body{
+            background-image: url('assets/fondo_duenos.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div class="signin-container">
+        <div class="signin-box">
+            <img class="logo" src="assets/logo.png" alt="PetWellness Logo" >
+            <h2>Crea una cuenta</h2>
+            <div class="tabs">
+                <button class="tab" [class.active]="activeTab === 'duenos'" (click)="changeTab('duenos')">Dueños</button>
+                <button class="tab" [class.active]="activeTab === 'albergues'" (click)="changeTab('albergues')">Albergues</button>
+                <button class="tab" [class.active]="activeTab === 'veterinario'" (click)="changeTab('veterinario')">Veterinario</button>
+            </div>
+            <div class="social-login">
+                <img class="google" src="assets/google.png" alt="Google">
+                <img class="apple" src="assets/apple.png" alt="Apple">
+                <img class="facebook" src="assets/facebook.png" alt="Facebook">
+            </div>
+            <div>
+                <div *ngIf="activeTab === 'duenos'"> <!--Formulario para dueños -->
+                   <form [formGroup]="formDuenos" >
+                    <div class="input-group">
+                        <!--Nombres -->
+                        <label for="">Nombres</label>
+                        <br>
+                        <input formControlName="nombres">
+                        <div class="" *ngIf="formDuenos.get('nombres')?.invalid && (formDuenos.get('nombres')?.dirty || formDuenos.get('nombres')?.touched)">
+                            <span *ngIf="formDuenos.get('nombres')?.errors?.['required']">
+                              Este campo es requerido
+                            </span>
+                        </div>
+                        <br>
+                        <!--Apellidos -->
+                        <label for="">Apellidos</label>
+                        <br>
+                        <input formControlName="apellidos">
+                        <div class="" *ngIf="formDuenos.get('apellidos')?.invalid && (formDuenos.get('apellidos')?.dirty || formDuenos.get('apellidos')?.touched)">
+                            <span *ngIf="formDuenos.get('apellidos')?.errors?.['required']">
+                              Este campo es requerido
+                            </span>
+                        </div>
+                        <br>
+                        <!--Email -->
+                        <label for="">Email</label>
+                        <br>
+                        <input formControlName="email">
+                        <div *ngIf="formDuenos.get('email')?.invalid && (formDuenos.get('email')?.dirty || formDuenos.get('email')?.touched)">
+                            <span *ngIf="formDuenos.get('email')?.errors?.['required']">
+                              Este campo es requerido
+                            </span>
+                            <span *ngIf="formDuenos.get('email')?.errors?.['email']">
+                              El correo electrónico no es válido
+                            </span>
+                        </div>
+                        <br>
+                        <!--Teléfono -->
+                        <label for="">Teléfono</label>
+                        <br>
+                        <input type="number" (input)="restrictPhone($event)" formControlName="tlf">
+                        <div class="" *ngIf="formDuenos.get('tlf')?.invalid && (formDuenos.get('tlf')?.dirty || formDuenos.get('tlf')?.touched)">
+                            <span *ngIf="formDuenos.get('tlf')?.errors?.['required']">
+                              Este campo es requerido
+                            </span>
+                        </div>
+                        <br>
+                        <!--Contraseña -->
+                        <label for="">Contraseña</label>
+                        <br>
+                        <input formControlName="contrasena" formControlName="contrasena">
+                        <div class="" *ngIf="formDuenos.get('contrasena')?.invalid && (formDuenos.get('contrasena')?.dirty || formDuenos.get('contrasena')?.touched)">
+                          <span *ngIf="formDuenos.get('contrasena')?.errors?.['required']">
+                            Este campo es requerido
+                          </span>
+                      </div>
+                        <br>
+                         <!--Confirmación Contraseña -->
+                        <label class = "c_contrasena" for="">Confirmación de contraseña</label>
+                        <br>
+                        <input formControlName="c_contrasena">
+                        <div class="" *ngIf="formDuenos.get('contrasena')?.invalid && (formDuenos.get('contrasena')?.dirty || formDuenos.get('contrasena')?.touched)">
+                            <span *ngIf="formDuenos.get('contrasena')?.errors?.['required']">
+                              Este campo es requerido
+                            </span>
+                        </div>
+                        <button type="submit" class="create-btn" [disabled]="!formDuenos.valid || !passwordsMatch(formDuenos)" routerLink="../security">
+                            Crear
+                        </button>
+                    </div>
+                   </form>
+                </div>
+                <div *ngIf="activeTab === 'albergues'"> <!--Formulario para albergues -->
+                    <form [formGroup]="formAlbergue" >
+                        <div class="input-group">
+                            <label for="">Nombres</label>
+                            <br>
+                            <!--Nombres -->
+                            <input formControlName="nombres">
+                            <div class="" *ngIf="formAlbergue.get('nombres')?.invalid && (formAlbergue.get('nombres')?.dirty || formAlbergue.get('nombres')?.touched)">
+                                <span *ngIf="formAlbergue.get('nombres')?.errors?.['required']">
+                                  Este campo es requerido
+                                </span>
+                            </div>
+                            <br>
+                            <!--Apellidos -->
+                            <label for="">Apellidos</label>
+                            <br>
+                            <input formControlName="apellidos">
+                            <div class="" *ngIf="formAlbergue.get('apellidos')?.invalid && (formAlbergue.get('apellidos')?.dirty || formAlbergue.get('apellidos')?.touched)">
+                                <span *ngIf="formAlbergue.get('apellidos')?.errors?.['required']">
+                                  Este campo es requerido
+                                </span>
+                            </div>
+                            <br>
+                            <!--Email -->
+                            <label for="">Email</label>
+                            <br>
+                            <input formControlName="email">
+                            <div class="" *ngIf="formAlbergue.get('email')?.invalid && (formAlbergue.get('email')?.dirty || formAlbergue.get('email')?.touched)">
+                                <span *ngIf="formAlbergue.get('email')?.errors?.['required']">
+                                  Este campo es requerido
+                                </span>
+                                <span *ngIf="formAlbergue.get('email')?.errors?.['email']">
+                                  El correo electrónico no es válido
+                                </span>
+                            </div>
+                            <br>
+                             <!--Teléfono -->
+                            <label for="">Teléfono</label>
+                            <br>
+                            <input type="number" (input)="restrictPhone($event)" formControlName="tlf" >
+                            <div class="" *ngIf="formAlbergue.get('tlf')?.invalid && (formAlbergue.get('tlf')?.dirty || formAlbergue.get('tlf')?.touched)">
+                                <span *ngIf="formAlbergue.get('tlf')?.errors?.['required']">
+                                  Este campo es requerido
+                                </span>
+                            </div>
+                            <br>
+                            <!--Nombre del albergue -->
+                            <label for="">Nombre del albergue</label>
+                            <br>
+                            <input formControlName="n_albergue">
+                            <div class="" *ngIf="formAlbergue.get('n_albergue')?.invalid && (formAlbergue.get('n_albergue')?.dirty || formAlbergue.get('n_albergue')?.touched)">
+                                <span *ngIf="formAlbergue.get('n_albergue')?.errors?.['required']">
+                                  Este campo es requerido
+                                </span>
+                            </div>
+                            <br>
+                            <label for="">Tipo de albergue</label>
+                            <br>
+                            <input formControlName="t_albergue">
+                            <div class="" *ngIf="formAlbergue.get('t_albergue')?.invalid && (formAlbergue.get('t_albergue')?.dirty || formAlbergue.get('t_albergue')?.touched)">
+                                <span *ngIf="formAlbergue.get('t_albergue')?.errors?.['required']">
+                                  Este campo es requerido
+                                </span>
+                            </div>
+                            <br>
+                            <label for="">Contraseña</label>
+                            <br>
+                            <input formControlName="contrasena">
+                            <div class="" *ngIf="formAlbergue.get('contrasena')?.invalid && (formAlbergue.get('contrasena')?.dirty || formAlbergue.get('contrasena')?.touched)">
+                                <span *ngIf="formAlbergue.get('contrasena')?.errors?.['required']">
+                                  Este campo es requerido
+                                </span>
+                            </div>
+                            <br>
+                            <label for="">Confirmación de contraseña</label>
+                            <br>
+                            <input formControlName="c_contrasena">
+                            <div class="" *ngIf="formAlbergue.get('contrasena')?.invalid && (formAlbergue.get('contrasena')?.dirty || formAlbergue.get('contrasena')?.touched)">
+                                <span *ngIf="formAlbergue.get('contrasena')?.errors?.['required']">
+                                  Este campo es requerido
+                                </span>
+                            </div>
+                            <button type="submit" class="create-btn" [disabled]="!formAlbergue.valid || !passwordsMatch(formAlbergue)" routerLink="../security">
+                                Crear
+                            </button>
+                        </div>
+                       </form>
+                </div>
+                <div *ngIf="activeTab === 'veterinario'"> <!--Formulario para veterinarios -->
+                    <form [formGroup]="formVeterinario" >
+                        <div class="input-group">
+                           <!--Nombres -->
+                            <label for="">Nombres</label>
+                            <br>
+                            <input formControlName="nombres">
+                            
+                            <div class="" *ngIf="formVeterinario.get('nombres')?.invalid && (formVeterinario.get('nombres')?.dirty || formVeterinario.get('nombres')?.touched)">
+                              <span *ngIf="formVeterinario.get('nombres')?.errors?.['required']">
+                                Este campo es requerido
+                              </span>
+                            </div>
+                            <br>
+                            <!--Apellidos -->
+                            <label for="">Apellidos</label>
+                            <br>
+                            <input formControlName="apellidos">
+                            <div class="" *ngIf="formVeterinario.get('apellidos')?.invalid && (formVeterinario.get('apellidos')?.dirty || formVeterinario.get('apellidos')?.touched)">
+                              <span *ngIf="formVeterinario.get('apellidos')?.errors?.['required']">
+                                Este campo es requerido
+                              </span>
+                            </div>
+                          <br>
+                            <!--Email -->
+                            <label for="">Email</label>
+                            <br>
+                            <input formControlName="email">
+                            <div class="" *ngIf="formVeterinario.get('email')?.invalid && (formVeterinario.get('email')?.dirty || formVeterinario.get('email')?.touched)">
+                              <span *ngIf="formVeterinario.get('email')?.errors?.['required']">
+                                Este campo es requerido
+                              </span>
+                              <span *ngIf="formVeterinario.get('email')?.errors?.['email']">
+                                El correo electrónico no es válido
+                              </span>
+                            </div>
+                            <br>
+                            <!--Teléfono -->
+                            <label for="">Teléfono</label>
+                            <br>
+                            <input type="number" (input)="restrictPhone($event)" formControlName="tlf">
+                            <div class="" *ngIf="formVeterinario.get('tlf')?.invalid && (formVeterinario.get('tlf')?.dirty || formVeterinario.get('tlf')?.touched)">
+                              <span *ngIf="formVeterinario.get('tlf')?.errors?.['required']">
+                                Este campo es requerido
+                              </span>
+                            </div>
+                            <br>
+                            <!--Especialidad -->
+                            <label for="">Especialidad</label>
+                            <br>
+                            <input formControlName="especialidad">
+                            <div class="" *ngIf="formVeterinario.get('especialidad')?.invalid && (formVeterinario.get('especialidad')?.dirty || formVeterinario.get('especialidad')?.touched)">
+                              <span *ngIf="formVeterinario.get('especialidad')?.errors?.['required']">
+                                Este campo es requerido
+                              </span>
+                            </div>
+                            <br>
+                            <!--Institución Educativa -->
+                            <label for="">Institución Educativa</label>
+                            <br>
+                            <input formControlName="institucion">
+                            <div class="" *ngIf="formVeterinario.get('institucion')?.invalid && (formVeterinario.get('institucion')?.dirty || formVeterinario.get('institucion')?.touched)">
+                              <span *ngIf="formVeterinario.get('institucion')?.errors?.['required']">
+                                Este campo es requerido
+                              </span>
+                            </div>
+                            <br>
+                            <!--Contraseña -->
+                            <label for="">Contraseña</label>
+                            <br>
+                            <input formControlName="contrasena">
+                            <div class="" *ngIf="formVeterinario.get('contrasena')?.invalid && (formVeterinario.get('contrasena')?.dirty || formVeterinario.get('contrasena')?.touched)">
+                              <span *ngIf="formVeterinario.get('contrasena')?.errors?.['required']">
+                                Este campo es requerido
+                              </span>
+                            </div>
+                            <br>
+                            <!--Confirmación de contraseña -->
+                            <label for="" class="confirmacion">Confirmación de contraseña</label>
+                            <br>
+                            <input formControlName="c_contrasena" >
+                            <div class="" *ngIf="formVeterinario.get('contrasena')?.invalid && (formVeterinario.get('contrasena')?.dirty || formVeterinario.get('contrasena')?.touched)">
+                              <span *ngIf="formVeterinario.get('contrasena')?.errors?.['required']">
+                                Este campo es requerido
+                              </span>
+                            </div>
+                            <button type="submit" class="create-btn" [disabled]="!formVeterinario.valid || !passwordsMatch(formDuenos) " routerLink="../security"> Crear </button>
+                        </div>
+                       </form>
+                </div>  
+            </div>
+            <hr>
+            <a class="your-account">¿Ya tienes cuenta?</a>
+            <button  routerLink="../login" class="access-account">Accede a tu cuenta</button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verificacion de seguridad</title>
+    <link rel="stylesheet" href="security-code.component.css">
+</head>
+<body>
+    <div class="security-code-container">
+        <div class="security-code-box">
+            <img src="assets/logo.png" alt="Logo de PetWellness" class="logo">
+            <h2>Verificación de seguridad</h2>
+            <p class="texto">Ingrese el código enviado para iniciar sesión.</p>
+            <div class="container">
+                <div class="option">
+                    <form [formGroup]="recoveryGroup" (ngSubmit)="submitTransfer()">
+                        <div class="input-group">
+                            <input type = "number" (input)="restrictInput($event)" formControlName="input1">
+                            <input type = "number" (input)="restrictInput($event)" formControlName="input2">
+                            <input type = "number" (input)="restrictInput($event)" formControlName="input3">
+                            <input type = "number" (input)="restrictInput($event)" formControlName="input4">
+                        </div>
+                        <p class="reenviar">Reenviar el código</p>
+                        <p class="confirmacion">
+                            Preguntarme por la verificación de seguridad cada vez
+                            que inicio sesión
+                        </p>
+                    </form>
+                </div>
+                <div class="buttons">
+                    <button class="cancelar" routerLink="../security">Cancelar</button>
+                    <button class="siguiente" routerLink="../login" type="submit" [disabled]="!recoveryGroup.valid" >
+                        Siguiente
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

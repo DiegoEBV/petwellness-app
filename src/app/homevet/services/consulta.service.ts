@@ -30,5 +30,10 @@ export class ConsultaService {
     const url = `${this.baseUrl}/tasksvet`;
     return this.http.get<TareaResponse[]>(url);
   }
+  
+  addRecordatorio(recordatorio: RecordatorioResponse): Observable<RecordatorioResponse> {
+    const url = `${this.baseUrl}/appointmentsvet`;
+    return this.http.post<RecordatorioResponse>(url, recordatorio);
+  }
 
 }
