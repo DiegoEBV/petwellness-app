@@ -10,9 +10,13 @@ import { SecurityComponent } from './security/security.component';
 import { SecurityCodeComponent } from './security-code/security-code.component';
 
 
+
 const routes: Routes = [
   { path: 'homeduenio', loadChildren: () => import('./homeduenio/homeduenio.module').then(m => m.HomeduenioModule) },
   { path: 'homevet', loadChildren: () => import('./homevet/homevet.module').then(m => m.HomevetModule) },
+<<<<<<< feature/informacion-general-vet-
+  { path: 'perfil-vet', loadChildren: () => import('./perfil-vet/perfil-vet.module').then(m => m.PerfilVetModule) },
+=======
 <<<<<<< feature/informacion-general-duenio-
   { path: 'perfil-duenio', loadChildren: () => import('./perfil-duenio/perfil-duenio.module').then(m => m.PerfilDuenioModule) },
 =======
@@ -25,6 +29,7 @@ const routes: Routes = [
   {path: 'signin', component: SigninComponent},
   {path: 'security', component: SecurityComponent},
   {path: 'security-code', component: SecurityCodeComponent}
+>>>>>>> develop
 >>>>>>> develop
 ];
 
