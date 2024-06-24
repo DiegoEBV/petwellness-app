@@ -21,6 +21,16 @@ export class LoginComponent {
     password: ['', Validators.required]
   });
 
+  formGroup2 = this.formBuilder.group({
+    email: ['',[Validators.required, Validators.email]],
+    password: ['', Validators.required]
+  });
+
+  formGroup3 = this.formBuilder.group({
+    email: ['',[Validators.required, Validators.email]],
+    password: ['', Validators.required]
+  });
+
   submitTransfer(){
     if(this.formGroup.valid){
       console.log(this.formGroup.value);

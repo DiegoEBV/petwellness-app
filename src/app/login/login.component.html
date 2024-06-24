@@ -30,28 +30,78 @@
                 <img class="facebook" src="assets/facebook.png" alt="Facebook">
             </div>
             <div>
-                <form [formGroup]="formGroup" (ngSubmit)="submitTransfer()">
-                    <div class="input-group">
-                        <label for="">Email</label>
-                        <br>
-                        <input formControlName="email">
-                        <div class="incorrect_email" *ngIf="formGroup.get('email')?.invalid && (formGroup.get('email')?.dirty || formGroup.get('email')?.touched)">
-                            <span *ngIf="formGroup.get('email')?.errors?.['required']">
-                              Este campo es requerido
-                            </span>
-                            <span *ngIf="formGroup.get('email')?.errors?.['email']">
-                              El correo electrónico no es válido
-                            </span>
-                          </div>
-                        <br>
-                        <label for="" >Contraseña</label>
-                        <br>
-                        <input class="contraseña" formControlName="password">
-                    </div>
-                    <button class="login-btn" type="submit" [disabled]="!formGroup.valid" routerLink="../homevet">
-                        Acceder
-                    </button>
-                </form>
+                <div *ngIf="activeTab === 'duenos'">
+                    <form [formGroup]="formGroup" (ngSubmit)="submitTransfer()">
+                        <div class="input-group">
+                            <label for="">Email</label>
+                            <br>
+                            <input formControlName="email">
+                            <div class="incorrect_email" *ngIf="formGroup.get('email')?.invalid && (formGroup.get('email')?.dirty || formGroup.get('email')?.touched)">
+                                <span *ngIf="formGroup.get('email')?.errors?.['required']">
+                                  Este campo es requerido
+                                </span>
+                                <span *ngIf="formGroup.get('email')?.errors?.['email']">
+                                  El correo electrónico no es válido
+                                </span>
+                              </div>
+                            <br>
+                            <label for="" >Contraseña</label>
+                            <br>
+                            <input class="contraseña" formControlName="password">
+                        </div>
+                        <button class="login-btn" type="submit" [disabled]="!formGroup.valid" routerLink="../homevet">
+                            Acceder
+                        </button>
+                    </form>
+                </div>
+                <div *ngIf="activeTab === 'albergues'">
+                    <form [formGroup]="formGroup2" (ngSubmit)="submitTransfer()">
+                        <div class="input-group">
+                            <label for="">Email</label>
+                            <br>
+                            <input formControlName="email">
+                            <div class="incorrect_email" *ngIf="formGroup2.get('email')?.invalid && (formGroup2.get('email')?.dirty || formGroup2.get('email')?.touched)">
+                                <span *ngIf="formGroup2.get('email')?.errors?.['required']">
+                                  Este campo es requerido
+                                </span>
+                                <span *ngIf="formGroup2.get('email')?.errors?.['email']">
+                                  El correo electrónico no es válido
+                                </span>
+                              </div>
+                            <br>
+                            <label for="" >Contraseña</label>
+                            <br>
+                            <input class="contraseña" formControlName="password">
+                        </div>
+                        <button class="login-btn" type="submit" [disabled]="!formGroup2.valid" routerLink="../homevet">
+                            Acceder
+                        </button>
+                    </form>
+                </div>
+                <div *ngIf="activeTab === 'veterinario'">
+                    <form [formGroup]="formGroup3" (ngSubmit)="submitTransfer()">
+                        <div class="input-group">
+                            <label for="">Email</label>
+                            <br>
+                            <input formControlName="email">
+                            <div class="incorrect_email" *ngIf="formGroup3.get('email')?.invalid && (formGroup3.get('email')?.dirty || formGroup3.get('email')?.touched)">
+                                <span *ngIf="formGroup3.get('email')?.errors?.['required']">
+                                  Este campo es requerido
+                                </span>
+                                <span *ngIf="formGroup3.get('email')?.errors?.['email']">
+                                  El correo electrónico no es válido
+                                </span>
+                              </div>
+                            <br>
+                            <label for="" >Contraseña</label>
+                            <br>
+                            <input class="contraseña" formControlName="password">
+                        </div>
+                        <button class="login-btn" type="submit" [disabled]="!formGroup3.valid" routerLink="../homevet">
+                            Acceder
+                        </button>
+                    </form>
+                </div>
             </div>
             <a class="forgot-password" routerLink="../recovery">Olvidé mi contraseña</a>
             <hr>
