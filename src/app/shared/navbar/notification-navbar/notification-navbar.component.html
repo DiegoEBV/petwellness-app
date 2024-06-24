@@ -1,0 +1,15 @@
+<div class="notification-container"
+     (mouseenter)="toggleNotifications(true)"
+     (mouseleave)="toggleNotifications(false)">
+  <button class="notification-button">
+    <mat-icon aria-hidden="false" fontIcon="notifications"></mat-icon>
+    <span class="notification-count" *ngIf="notificationCount > 0">{{ notificationCount }}</span>
+  </button>
+  <div class="notifications-dropdown" *ngIf="showNotifications">
+    <ul>
+      <li (click)="handleNotificationClick()">{{ latestNotification }}</li>
+    </ul>
+  </div>
+</div>
+
+

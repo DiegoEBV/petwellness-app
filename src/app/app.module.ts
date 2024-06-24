@@ -3,16 +3,40 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
+import { MaterialModule } from './material/material.module';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { NotificationNavbarComponent } from './shared/navbar/notification-navbar/notification-navbar.component';
+import { HomeduenioModule } from './homeduenio/homeduenio.module';
+import { HttpClientModule } from '@angular/common/http';
+import { HomevetModule } from './homevet/homevet.module';
+import { FormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { ConsultasDuenoModule } from './consultas-dueno/consultas-dueno.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    NavbarComponent,
+    FooterComponent,
+    NotificationNavbarComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MaterialModule,
+    HomeduenioModule,
+    HomevetModule,
+    HttpClientModule,
+    FormsModule,
+    MatIconModule,
+    ConsultasDuenoModule,
   ],
-  providers: [],
+  providers: [
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

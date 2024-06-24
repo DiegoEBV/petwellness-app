@@ -1,0 +1,120 @@
+<!-- home.component.html -->
+<div class="homevet">
+    <header>
+      <h1>Bienvenido <span>Jose y Chewbacca!</span></h1>
+    </header>
+    <main>
+      <div class="dashboard">
+        <section class="dashboard-item lectura-y-tareas">
+          <div class="lectura-diaria">
+            <h2>Lectura Diária</h2>
+            <img src="assets/blog1.png" alt="Lectura Diária">
+            <p>¿Te ha pasado que quieres ir a comer a algún lugar fuera de tu casa, pero no quieres dejar a tu engreído solo? O simplemente, ¿te gustaría estar en......</p>
+            <button>Leer más</button>
+          </div>
+          <div class="tareas-de-hoy">
+            <div class="header">
+              <h2>Tareas de Hoy</h2>
+              <span class="task-count">12</span>
+            </div>
+            <ul class="tasks">
+              <li *ngFor="let task of tasks">
+                <div class="task-container">
+                  <span class="icon"><img [src]="task.icon" alt="icon"></span>
+                  <div class="task-details">
+                    <p>{{ task.name }}</p>
+                    <time>{{ task.time }}</time>
+                  </div>
+                  <span class="external-link"><img [src]="task.linkIcon" alt="link icon"></span>
+                </div>
+              </li>
+            </ul>            
+            <div class="ver-mas-container">
+              <button class="ver-mas">Ver más</button>
+            </div>            
+          </div>
+        </section>                
+        <div class="tienda">
+            <app-tienda></app-tienda>
+        </div>          
+        <section class="dashboard-item calendar">
+          <div class="calendar-header">
+            <h2>Abril 2024 <span class="dropdown-icon">▼</span></h2>
+            <button class="add-reminder">+ Add recordatorio</button>
+          </div>
+          <div class="calendar">
+            <div class="calendar-header">
+              <span class="prev" (click)="prev()">&lt;</span>
+              <ul class="days">
+                <li *ngFor="let day of days">{{ day }}</li>
+              </ul>
+              <span class="next" (click)="next()">&gt;</span>
+            </div>
+            <div class="calendar-body">
+              <ul class="dates">
+                <li *ngFor="let date of dates; let i = index" [class.active]="i === activeIndex">
+                  {{ date }}
+                </li>
+              </ul>
+            </div>
+          </div>          
+          <ul class="appointments">
+            <li *ngFor="let appointment of appointments">
+              <div class="task-container">
+                <span class="icon"><img [src]="appointment.icon" alt="icon"></span>
+                <div class="task-details">
+                  <p>{{ appointment.name }}</p>
+                  <time>{{ appointment.time }}</time>
+                </div>
+              </div>
+            </li>
+          </ul>          
+        </section>        
+        <section class="dashboard-item proximo-paciente">
+          <div class="patient-header">
+            <h2>Próxima Consulta</h2>
+            <span routerLink="/antes-consulta" class="external-link"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAABJElEQVR4nO2VvWoCQRSFv7G0ij9VniBEm6BYaB4gsTWFSAgY0Cpd8iqCgk8QSC8KAcuIRQi+h0lhlUJZOMIizuzuaBPigVNc5s79uMPevfDflQEega7FD0D6UEgbWEf43lWgArwBc4tvgBRQBEohl4FpCNKxAVrAL/CtC5Mdj4DqnnsG6Kv4xAXJq/gHkE3wdCYE6KtDK+ROh7cJAYMQIIgLLkhHhwUPwEAxx4QYoKf8oT4Ejgkxlg62utBZ2xdiIgCoq2BQz3whTxGAmubIqjiQS4H2AdAcfR0KidIYWLgSTpBEz7X9fV/hrynw6Uq4FuTZE5ADfoBXV1IwRO/ACnjRXinFdB2YaU0EsVPnAq09vASacds2ejrXDu/uuJFwB/1RbQAq/nUqTc80IgAAAABJRU5ErkJggg=="></span>
+          </div>
+          <div class="patient-info">
+            <img src="assets/work.png" alt="Paciente">
+            <div class="patient-details">
+              <h3>Dr. Jose </h3>
+              <p>29 años | <span>Surquillo, Perú</span></p>
+              <div class="patient-stats">
+                <div class="stat-item">
+                  <span>Fecha</span>
+                  <p>11 de abril del 2024</p>
+                </div>
+                <div class="stat-item">
+                  <span>Hora</span>
+                  <p>11:30 AM</p>
+                </div>
+              </div>              
+            </div>
+          </div>
+          <div class="patient-notes">
+            <ul class="tabs">
+              <li (click)="selectTab('resumen')" [class.active]="selectedTab === 'resumen'">Resumen</li>
+              <li (click)="selectTab('fotos')" [class.active]="selectedTab === 'fotos'">Fotos</li>
+              <li (click)="selectTab('notas')" [class.active]="selectedTab === 'notas'">Notas</li>
+            </ul>
+            <div class="content">
+              <p *ngIf="selectedTab === 'resumen'">Ingresa algún detalle de la consulta a hacer ...</p>
+              <p *ngIf="selectedTab === 'fotos'">Cargue imágenes ...</p>
+              <p *ngIf="selectedTab === 'notas'">Ingresa alguna nota de la consulta a hacer ...</p>
+              <div class="buttons">
+                <button *ngIf="selectedTab === 'resumen'">Enviar</button>
+                <button *ngIf="selectedTab === 'fotos'">Enviar</button>
+                <button *ngIf="selectedTab === 'fotos'" (click)="triggerFileInput()">Subir</button>
+                <input type="file" #fileInput (change)="onFileSelected($event)" style="display: none;">
+                <button *ngIf="selectedTab === 'notas'">Enviar</button>
+              </div>
+            </div>
+          </div>
+                      
+        </section>
+      </div>
+    </main>
+  </div>
+  
+

@@ -1,0 +1,12 @@
+<ul class="appointments">
+    <li *ngFor="let recordatorio of appointmentsvet">
+      <div class="task-container">
+        <span class="icon"><img [src]="recordatorio.icon" alt="icon"></span>
+        <div class="task-details">
+          <p>{{ recordatorio.name }}</p>
+          <time>{{ recordatorio.time }}</time>
+        </div>
+      </div>
+    </li>
+</ul>
+
