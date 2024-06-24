@@ -1,0 +1,76 @@
+.tiendita h2 {
+    margin: 0;
+    color: #003049;
+    margin-bottom: 10px;
+}
+  
+.consultas-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+  
+.consulta-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    flex: 1 1 calc(50% - 20px);
+}
+  
+.consulta-card img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+  
+.appointment-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 10px; 
+}
+  
+.appointment-details p {
+    margin: 0;
+    font-size: 16px;
+    color: #003049;
+    font-weight: 600;
+}
+  
+.appointment-details .price {
+    font-size: 14px;
+    color: #726C6C;
+    font-weight: normal;
+}
+  
+.consulta-card button {
+    background: #54AFB2;
+    color: #fff;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.consulta-card button:hover {
+    background: #003049;
+}
+  
+.consulta-card button img {
+    width: 24px;
+    height: 24px;
+}
+  
+.price del {
+    color: #b1b1b1;
+    margin-right: 5px;
+}

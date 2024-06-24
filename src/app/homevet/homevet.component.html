@@ -13,39 +13,11 @@
             <button>Leer más</button>
           </div>
           <div class="tareas-de-hoy">
-            <div class="header">
-              <h2>Tareas de Hoy</h2>
-              <span class="task-count">12</span>
-            </div>
-            <ul class="tasks">
-              <li *ngFor="let task of tasks">
-                <div class="task-container">
-                  <span class="icon"><img [src]="task.icon" alt="icon"></span>
-                  <div class="task-details">
-                    <p>{{ task.name }}</p>
-                    <time>{{ task.time }}</time>
-                  </div>
-                  <span class="external-link"><img [src]="task.linkIcon" alt="link icon"></span>
-                </div>
-              </li>
-            </ul>            
-            <div class="ver-mas-container">
-              <button class="ver-mas">Ver más</button>
-            </div>            
+            <app-tareas></app-tareas>           
           </div>
         </section>                
         <section class="dashboard-item proximas-consultas">
-          <h2>Próximas Consultas</h2>
-          <div class="consultas-list">
-            <div class="consulta-card" *ngFor="let consulta of consultas">
-              <img [src]="consulta.img" [alt]="consulta.nombre">
-              <div class="appointment-details">
-                <p>{{ consulta.nombre }}</p>
-                <time>{{ consulta.fecha }} | {{ consulta.hora }}</time>
-              </div>
-              <button>Historial Clínico</button>
-            </div>
-          </div>
+          <app-consultas></app-consultas>
         </section>            
         <section class="dashboard-item calendar">
           <div class="calendar-header">
@@ -68,17 +40,7 @@
               </ul>
             </div>
           </div>          
-          <ul class="appointments">
-            <li *ngFor="let appointment of appointments">
-              <div class="task-container">
-                <span class="icon"><img [src]="appointment.icon" alt="icon"></span>
-                <div class="task-details">
-                  <p>{{ appointment.name }}</p>
-                  <time>{{ appointment.time }}</time>
-                </div>
-              </div>
-            </li>
-          </ul>          
+          <app-recordatorios></app-recordatorios>          
         </section>        
         <section class="dashboard-item proximo-paciente">
           <div class="patient-header">
