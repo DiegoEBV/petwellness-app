@@ -11,13 +11,7 @@ import { NotificationNavbarComponent } from './shared/navbar/notification-navbar
 import { HomeduenioModule } from './homeduenio/homeduenio.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomevetModule } from './homevet/homevet.module';
-import { PerfilPacienteDuenioComponent } from './perfil-paciente-duenio/perfil-paciente-duenio.component';
-import { HistorialMedicoDuenioComponent } from './historial-medico-duenio/historial-medico-duenio.component';
-import { NotasConsultaDuenioComponent } from './notas-consulta-duenio/notas-consulta-duenio.component';
-import { PlanesAccionDuenioComponent } from './planes-accion-duenio/planes-accion-duenio.component';
-import { ArchivosDuenioComponent } from './archivos-duenio/archivos-duenio.component';
-import { EstadisticaDuenioComponent } from './estadistica-duenio/estadistica-duenio.component';
-import { InformacionGeneralDuenioComponent } from './informacion-general-duenio/informacion-general-duenio.component';
+import { PerfilDuenioModule } from './perfil-duenio/perfil-duenio.module';
 
 
 
@@ -27,13 +21,6 @@ import { InformacionGeneralDuenioComponent } from './informacion-general-duenio/
     NavbarComponent,
     FooterComponent,
     NotificationNavbarComponent,
-    PerfilPacienteDuenioComponent,
-    HistorialMedicoDuenioComponent,
-    NotasConsultaDuenioComponent,
-    PlanesAccionDuenioComponent,
-    ArchivosDuenioComponent,
-    EstadisticaDuenioComponent,
-    InformacionGeneralDuenioComponent,
 
   ],
   imports: [
@@ -42,7 +29,8 @@ import { InformacionGeneralDuenioComponent } from './informacion-general-duenio/
     MaterialModule,
     HomeduenioModule,
     HomevetModule,
-    HttpClientModule
+    HttpClientModule,
+    PerfilDuenioModule
   ],
   providers: [
     provideAnimationsAsync()
