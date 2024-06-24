@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { NotificationNavbarComponent } from './../shared/navbar/notification-navbar/notification-navbar.component';
+import { Component, OnInit, Signal, signal } from '@angular/core';
 import { ProductosService } from './services/productos.service';
 import { ProductoResponse } from './interfaces/producto-response.interface';
 import { ShopRequest } from './interfaces/shop-request.interface';
+import { NavbarComponent } from '../shared/navbar/navbar.component';
 interface Producto {
   img: string;
   nombre: string;
@@ -18,7 +20,7 @@ export class TiendaComponent implements OnInit {
   message: string = '';
   messageType: string = '';
 
-  constructor(private productoService: ProductosService) { }
+  constructor(private productoService: ProductosService) {}
 
   ngOnInit() {
     this.loadProducts();
@@ -35,14 +37,14 @@ export class TiendaComponent implements OnInit {
   }
 
   addProductToCar(producto: Producto): void {
-    const ShopRequest: ShopRequest = {
+    const shopRequest: ShopRequest = {
       id: 0,
       img: producto.img,
       nombre: producto.nombre,
       precio: producto.precio
     };
 
-    this.productoService.ShopRequest(ShopRequest).subscribe({
+    this.productoService.ShopRequest(shopRequest).subscribe({
       next: (response: ShopRequest) => {
         this.showMessage('Producto añadido exitosamente al carrito', 'success');
       },

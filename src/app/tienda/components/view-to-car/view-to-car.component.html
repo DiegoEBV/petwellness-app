@@ -6,6 +6,7 @@
       <div class="item-details">
         <p>{{ shop.nombre }}</p>
         <p>{{ shop.precio }}</p>
+        <app-remove-from-car [productId]="shop.id" (productRemoved)="onProductRemoved(shop.id)"></app-remove-from-car>
       </div>
     </div>
   </div>

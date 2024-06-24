@@ -30,6 +30,12 @@ export class ViewToCarComponent {
       }
     );
   }
+
+  onProductRemoved(productId: number): void {
+    this.shops = this.shops.filter(shop => shop.id !== productId);
+    this.productCount.emit(this.shops.length);
+  }
+  
   goToCheckout(): void {
     window.location.href = 'homeduenio';
   }

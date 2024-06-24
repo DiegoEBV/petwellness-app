@@ -11,7 +11,6 @@ export class NavbarComponent {
   showCartIcon: boolean = false;
   isCartVisible: boolean = false;
   notificationCount: number = 0;
-
   constructor(private router: Router) {}
 
   ngOnInit() {
@@ -29,5 +28,4 @@ export class NavbarComponent {
   updateNotificationCount(count: number) {
     this.notificationCount = count;
   }
-
 }

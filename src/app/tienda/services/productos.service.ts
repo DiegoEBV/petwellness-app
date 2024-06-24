@@ -31,4 +31,9 @@ export class ProductosService {
     return this.http.post<ShopRequest>(url, newShop, { headers });
   }
 
+  removeProduct(shopId: number): Observable<void> {
+    const url = `${this.apiUrl}/shop/${shopId}`;
+    return this.http.delete<void>(url);
+  }
+
 }
