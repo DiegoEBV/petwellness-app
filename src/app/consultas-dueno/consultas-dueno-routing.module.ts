@@ -7,7 +7,7 @@ import { VideoConsultaComponent } from './componentes/video-consulta/video-consu
 
 const routes: Routes = [{ 
   path: '', component: ConsultasDuenoComponent },
-  { path: 'consultas', component: ReservarServicioComponent },
+  { path: 'consultas-duenio', component: ReservarServicioComponent },
   { path: 'antes-consulta', component: AntesConsultaComponent },
   { path: 'video-consulta/:nombrePaciente', component: VideoConsultaComponent },
 ];

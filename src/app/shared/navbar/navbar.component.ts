@@ -21,7 +21,7 @@ export class NavbarComponent {
   ngOnInit() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.showCartIcon = this.userRole === 'duenio' && this.router.url.includes('/homeduenio');
+        this.showCartIcon = this.userRole === 'duenio' ;
       }
     });
   }

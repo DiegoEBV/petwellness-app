@@ -14,7 +14,7 @@ import { SecurityCodeComponent } from './security-code/security-code.component';
 const routes: Routes = [
   { path: 'homeduenio', loadChildren: () => import('./homeduenio/homeduenio.module').then(m => m.HomeduenioModule) },
   { path: 'homevet', loadChildren: () => import('./homevet/homevet.module').then(m => m.HomevetModule) },
-  { path: 'consultas-dueno', loadChildren: () => import('./consultas-dueno/consultas-dueno.module').then(m => m.ConsultasDuenoModule) }
+  { path: 'consultas-dueno', loadChildren: () => import('./consultas-dueno/consultas-dueno.module').then(m => m.ConsultasDuenoModule) },
   {path: 'login', component: LoginComponent},
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {path: 'signin', component: SigninComponent},
