@@ -1,0 +1,102 @@
+.background {
+    background-color: #f0f0f0; /* Fondo gris claro */
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px; /* Asegurarse de que haya espacio alrededor en tamaños de pantalla más pequeños */
+  }
+  
+  .container {
+    width: 100%;
+    max-width: 1200px; /* Limitar el tamaño máximo del contenedor */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box; /* Incluir padding en el tamaño total del contenedor */
+  }
+  
+  .consultas-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px; /* Limitar el tamaño máximo de la tarjeta */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    box-sizing: border-box; /* Incluir padding en el tamaño total de la tarjeta */
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Añadido espacio debajo del header */
+  }
+  
+  .tareas {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    flex: 1;
+  }
+  
+  .tarea {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .tarea:last-child {
+    border-bottom: none;
+  }
+  
+  .button-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 20px;
+    position: relative;
+  }
+  
+  .iniciar-consulta {
+    padding: 10px 20px;
+    background-color: #5CB4B5;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .iniciar-consulta:hover {
+    background-color: #4ca0a1;
+  }
+  
+  .mensaje {
+    color: #5CB4B5;
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    top: -20px; /* Ajustar la posición del mensaje */
+  }
+  
+  /* Estilos para los checkboxes */
+  .custom-checkbox .mat-checkbox-background,
+  .custom-checkbox.mat-checkbox-checked .mat-checkbox-background,
+  .custom-checkbox.mat-checkbox-indeterminate .mat-checkbox-background {
+    background-color: #5CB4B5 !important;
+  }
+  
+  .custom-checkbox .mat-checkbox-checkmark-path {
+    stroke: white !important;
+  }
+  

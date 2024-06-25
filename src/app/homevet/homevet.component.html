@@ -22,7 +22,7 @@
         <section class="dashboard-item calendar">
           <div class="calendar-header">
             <h2>Abril 2024 <span class="dropdown-icon">▼</span></h2>
-            <button class="add-reminder">+ Add recordatorio</button>
+            <button class="add-reminder" (click)="openDialog()">+ Add recordatorio</button>
           </div>
           <div class="calendar">
             <div class="calendar-header">
@@ -31,7 +31,7 @@
                 <li *ngFor="let day of days">{{ day }}</li>
               </ul>
               <span class="next" (click)="next()">&gt;</span>
-            </div>
+            </div> 
             <div class="calendar-body">
               <ul class="dates">
                 <li *ngFor="let date of dates; let i = index" [class.active]="i === activeIndex">
@@ -45,7 +45,7 @@
         <section class="dashboard-item proximo-paciente">
           <div class="patient-header">
             <h2>Próximo Paciente</h2>
-            <span class="external-link"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAABJElEQVR4nO2VvWoCQRSFv7G0ij9VniBEm6BYaB4gsTWFSAgY0Cpd8iqCgk8QSC8KAcuIRQi+h0lhlUJZOMIizuzuaBPigVNc5s79uMPevfDflQEega7FD0D6UEgbWEf43lWgArwBc4tvgBRQBEohl4FpCNKxAVrAL/CtC5Mdj4DqnnsG6Kv4xAXJq/gHkE3wdCYE6KtDK+ROh7cJAYMQIIgLLkhHhwUPwEAxx4QYoKf8oT4Ejgkxlg62utBZ2xdiIgCoq2BQz3whTxGAmubIqjiQS4H2AdAcfR0KidIYWLgSTpBEz7X9fV/hrynw6Uq4FuTZE5ADfoBXV1IwRO/ACnjRXinFdB2YaU0EsVPnAq09vASacds2ejrXDu/uuJFwB/1RbQAq/nUqTc80IgAAAABJRU5ErkJggg=="></span>
+            <span routerLink="/consultas" class="external-link"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAABJElEQVR4nO2VvWoCQRSFv7G0ij9VniBEm6BYaB4gsTWFSAgY0Cpd8iqCgk8QSC8KAcuIRQi+h0lhlUJZOMIizuzuaBPigVNc5s79uMPevfDflQEega7FD0D6UEgbWEf43lWgArwBc4tvgBRQBEohl4FpCNKxAVrAL/CtC5Mdj4DqnnsG6Kv4xAXJq/gHkE3wdCYE6KtDK+ROh7cJAYMQIIgLLkhHhwUPwEAxx4QYoKf8oT4Ejgkxlg62utBZ2xdiIgCoq2BQz3whTxGAmubIqjiQS4H2AdAcfR0KidIYWLgSTpBEz7X9fV/hrynw6Uq4FuTZE5ADfoBXV1IwRO/ACnjRXinFdB2YaU0EsVPnAq09vASacds2ejrXDu/uuJFwB/1RbQAq/nUqTc80IgAAAABJRU5ErkJggg=="></span>
           </div>
           <div class="patient-info">
             <img src="assets/george.png" alt="Paciente">

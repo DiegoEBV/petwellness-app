@@ -1,0 +1,49 @@
+<div class="container">
+    <aside class="sidebar">
+        <h1>Perfil del paciente</h1>
+        <div class="profile-pic">
+            <img src="assets/chewbacca.png" alt="Chewbacca">
+        </div>
+        <div class="profile-info">
+            <h2>Chewbacca</h2>
+            <p>5 años | Miraflores, Perú</p>
+        </div>
+        <div class="menu-item active" [routerLink]="['/informacion-general-vet']">Información general</div>
+        <div class="menu-item" [routerLink]="['/historial-medico-vet']">Historial médico</div>
+        <div class="menu-item" [routerLink]="['/notas-consulta-vet']">Notas de consulta</div>
+        <div class="menu-item" [routerLink]="['/planes-accion-vet']">Planes de acción</div>
+        <div class="menu-item" [routerLink]="['/archivos-vet']">Archivos</div>
+        <div class="menu-item" [routerLink]="['/estadistica-vet']">Estadísticas</div>
+    </aside>
+    <main class="content">
+        <header>
+            <button class="edit-btn">Editar información</button>
+        </header>
+        <section class="info-section">
+            <div class="info-box">
+                <h2>Demografía</h2>
+                <p><strong>Nombre:</strong> Chewbacca</p>
+                <p><strong>Género:</strong> Macho</p>
+                <p><strong>Año de nacimiento:</strong> May 7, 2019</p>
+                <p><strong>Edad:</strong> 5</p>
+            </div>
+        </section>
+        <section class="info-section">
+            <div class="info-box">
+                <h2>Información de contacto</h2>
+                <p><strong>Email:</strong> josefernando</p>
+                <p><strong>Teléfono:</strong> 000 000 000 000</p>
+                <p><strong>Dirección:</strong> Av. Las Cerámicas 123, San Borja</p>
+            </div>
+        </section>
+        <section class="info-section">
+            <div class="info-box">
+                <h2>Seguro</h2>
+                <p><strong>Miembro ID:</strong> 12345678</p>
+                <p><strong>Titular de la póliza:</strong> Jose Fernando</p>
+                <p><strong>Información adicional:</strong> NA</p>
+            </div>
+        </section>
+    </main>
+</div>
+<router-outlet></router-outlet>

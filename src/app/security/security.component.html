@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recuperar cuenta</title>
+    <link rel="stylesheet" href="security.component.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="security-container">
+        <div class="security-box">
+            <img src="assets/logo.png" alt="Logo de PetWellness" class="logo">
+            <h2>Verificación de seguridad</h2>
+            <p>Elija un método para comprobar su identidad</p>
+            <div class="container">
+                <div class="option">
+                    <div class="i"></div>
+                    <p class="titulo">Correo electrónico</p>
+                    <div class="text">
+                        <img src="assets/Letter.png" alt="Ícono de correo electrónico" class="icon_mail">
+                        <button class="correo" routerLink="../security-code">
+                            <p>Enviar código de seguridad al correo</p>
+                        </button>
+                    </div>
+                </div>
+                <div class="option">
+                    <div class="icon sms-icon"></div>
+                    <p class="titulo">Mensaje de texto</p>
+                    <div class="text">
+                        <img src="assets/phone.png" alt="Ícono de teléfono" class="icon_tlf">
+                        <button class="tlf" routerLink="../security-code">
+                            Enviar código de seguridad al teléfono
+                        </button>
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="cancel" routerLink="../signin">
+                        Cancelar
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
