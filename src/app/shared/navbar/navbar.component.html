@@ -3,19 +3,28 @@
     <img src="assets/logo.png" alt="PetWellness Logo">
   </div>
   <ul class="navbar-links">
-    <li><a routerLink="/homevet" routerLinkActive="active">Inicio</a></li>
-    <li><a routerLink="/homeduenio" routerLinkActive="active">Inicio</a></li>
-    <li><a routerLink="/consultas" routerLinkActive="active">Consultas</a></li>
-    <li><a routerLink="/perfiles" routerLinkActive="active">Perfiles</a></li>
+    <li *ngIf="userRole === 'veterinario'"><a routerLink="/homevet" routerLinkActive="active">Inicio</a></li>
+    <li *ngIf="userRole === 'duenio'"><a routerLink="/homeduenio" routerLinkActive="active">Inicio</a></li>
+    <li *ngIf="userRole === 'veterinario'"><a routerLink="/consultas" routerLinkActive="active">Consultas</a></li>
+    <li *ngIf="userRole === 'duenio'"><a routerLink="/consultas-duenio" routerLinkActive="active">Consultas</a></li>
+    <li *ngIf="userRole === 'veterinario'"><a routerLink="/perfiles-vet" routerLinkActive="active">Perfiles</a></li>
+    <li *ngIf="userRole === 'duenio'"><a routerLink="/perfiles-duenio" routerLinkActive="active">Perfiles</a></li>
   </ul>
   <div class="navbar-actions">
     <div class="search-container">
       <button class="search-button"><mat-icon aria-hidden="false" fontIcon="search"></mat-icon></button>
       <input type="text" class="search-input" placeholder="Buscar...">
     </div>
+    <div *ngIf="showCartIcon" class="shopping-cart-container">
+      <button class="shopping-cart-button" (click)="toggleCart()">
+        <mat-icon aria-hidden="false" fontIcon="shopping_cart"></mat-icon>
+        <span class="notification-count" *ngIf="notificationCount > 0">{{ notificationCount }}</span>
+      </button>
+      <app-view-to-car *ngIf="isCartVisible" class="shopping-cart-dropdown" (closeCart)="toggleCart()" (productCount)="updateNotificationCount($event)"></app-view-to-car>
+    </div>    
     <app-notification-navbar></app-notification-navbar>
     <div class="user-profile">
-      <img src="assets/doct.png" alt="User Avatar">
+      <img routerLink="" routerLinkActive="active" src="assets/doct.png" alt="User Avatar">
     </div>
   </div>
 </nav>

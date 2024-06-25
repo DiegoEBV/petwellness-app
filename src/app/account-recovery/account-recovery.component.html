@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Recuperar cuenta</title>
+    <link rel="stylesheet" href="account-recovery.component.css">
+</head>
+<body>
+    <div class="account-recovery-container">
+        <div class="account-recovery-box">
+            <img src="assets/logo.png" alt="Logo de PetWellness" class="logo">
+            <h2>Recuperar contraseña</h2>
+            <p class="texto">Ingrese el código enviado para recuperar su cuenta.</p>
+            <div class="container">
+                <div class="option">
+                    <form [formGroup]="recoveryGroup" (ngSubmit)="submitTransfer()">
+                        <div class="input-group">
+                            <input type = "number" (input)="restrictInput($event)" formControlName="input1">
+                            <input type = "number" (input)="restrictInput($event)" formControlName="input2">
+                            <input type = "number" (input)="restrictInput($event)" formControlName="input3">
+                            <input type = "number" (input)="restrictInput($event)" formControlName="input4">
+                        </div>
+                        <p class="reenviar">Reenviar el código</p>
+                        <p class="confirmacion">
+                            Preguntarme por la verificación de seguridad cada vez
+                            que inicio sesión
+                        </p>
+                    </form>
+                </div>
+                <div class="buttons">
+                    <button class="cancelar" routerLink="../recovery">Cancelar</button>
+                    <button class="siguiente" routerLink="../recuperar-cuenta" type="sumbmit" [disabled]="!recoveryGroup.valid" >
+                        Siguiente
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

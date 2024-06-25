@@ -1,0 +1,24 @@
+<div class="container">
+    <aside class="sidebar">
+        <h1>Perfil de Chewbacca</h1>
+        <div class="profile-pic">
+            <img src="assets/chewbacca.png" alt="Chewbacca">
+        </div>
+        <div class="profile-info">
+            <h2>Chewbacca</h2>
+            <p>5 años | Miraflores, Perú</p>
+        </div>
+        <div class="menu-item" [routerLink]="['/informacion-general-duenio']">Información general</div>
+        <div class="menu-item" [routerLink]="['/historial-medico-duenio']">Historial médico</div>
+        <div class="menu-item" [routerLink]="['/notas-consulta-duenio']">Notas de consulta</div>
+        <div class="menu-item active" [routerLink]="['/planes-accion-duenio']">Planes de acción</div>
+        <div class="menu-item" [routerLink]="['/archivos-duenio']">Archivos</div>
+        <div class="menu-item" [routerLink]="['/estadistica-duenio']">Estadísticas</div>
+    </aside>
+    <main class="content">
+        <section style="margin-top: 15px; margin-bottom: 15px;">
+            <img src="assets/salud.jpg" class="rounded-border" alt="Salud">
+        </section>
+    </main>
+</div>
+<router-outlet></router-outlet>

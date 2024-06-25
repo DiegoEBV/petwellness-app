@@ -1,0 +1,51 @@
+<div class="container">
+    <aside class="sidebar">
+        <h1>Perfil de Chewbacca</h1>
+        <div class="profile-pic">
+            <img src="assets/chewbacca.png" alt="Chewbacca">
+        </div>
+        <div class="profile-info">
+            <h2>Chewbacca</h2>
+            <p>5 años | Miraflores, Perú</p>
+        </div>
+        <div class="menu-item" [routerLink]="['/informacion-general-duenio']">Información general</div>
+        <div class="menu-item" [routerLink]="['/historial-medico-duenio']">Historial médico</div>
+        <div class="menu-item active" [routerLink]="['/notas-consulta-duenio']">Notas de consulta</div>
+        <div class="menu-item" [routerLink]="['/planes-accion-duenio']">Planes de acción</div>
+        <div class="menu-item" [routerLink]="['/archivos-duenio']">Archivos</div>
+        <div class="menu-item" [routerLink]="['/estadistica-duenio']">Estadísticas</div>
+    </aside>
+    <main class="content">
+        <section class="notes-section">
+            <div class="note">
+                <div class="note-header">
+                    <span class="note-date">Sep 2, 2023</span>
+                </div>
+                <div class="note-content">
+                    <p>El dueño reportó que Chewbacca ha estado experimentando dolor en los tobillos. Actualmente, el perrito está bajo un tratamiento que incluye 2.5 mg de prednisona diarios, 10 mg de metrotexato semanalmente, y 1 mg de ácido fólico diario. Además, toma 10 mg de leflunomida diarios y 200 mg de hidroxicloroquina dos veces al día.</p>
+                </div>
+            </div>
+            <div class="note">
+                <div class="note-header">
+                    <span class="note-date">Aug 31, 2023</span>
+                </div>
+                <div class="note-content">
+                    <p>El dueño informa que Chewbacca ha estado experimentando dolor en los tobillos. Actualmente, el perro está recibiendo un tratamiento que incluye 2.5 mg de prednisona diarios, 10 mg de metrotexato semanalmente, y 1 mg de ácido fólico diario. Además, toma 10 mg de leflunomida diarios y 200 mg de hidroxicloroquina dos veces al día según lo prescrito por el veterinario.</p>
+                </div>
+            </div>
+            <div class="note">
+                <div class="note-header">
+                    <span class="note-date">Aug 30, 2023</span>
+                </div>
+                <div class="note-content">
+                    <p>El dueño informa que Chewbacca ha estado experimentando dolor en los tobillos. Actualmente, el perro está recibiendo un tratamiento que incluye 2.5 mg de prednisona diarios, 10 mg de metrotexato semanalmente, y 1 mg de ácido fólico diario. Además, toma 10 mg de leflunomida diarios y 200 mg de hidroxicloroquina dos veces al día según lo prescrito por el veterinario.</p>
+                </div>
+            </div>
+            <div class="add-note">
+                <textarea placeholder="Añade una nota..."></textarea>
+                <button class="send-btn">Enviar</button>
+            </div>
+        </section>
+    </main>
+</div>
+<router-outlet></router-outlet>

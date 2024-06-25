@@ -112,3 +112,76 @@
   width: 40px;
   border-radius: 50%;
 }
+
+.shopping-cart-container {
+  position: relative;
+  display: inline-block;
+}
+
+.shopping-cart-button {
+  background: #54AFB2;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s ease;
+}
+
+.shopping-cart-button:hover {
+  background: #003049;
+}
+
+.shopping-cart-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  margin-top: 10px;
+  background-color: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  width: 300px;
+  z-index: 10;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.shopping-cart-dropdown::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  right: 15px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: transparent transparent #fff transparent;
+  box-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.notification-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
