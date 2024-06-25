@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { ShopRequest } from '../../tienda/interfaces/shop-request.interface';
+import { RoleService } from '../../services/role.service';
 
 @Component({
   selector: 'app-navbar',
@@ -11,12 +12,16 @@ export class NavbarComponent {
   showCartIcon: boolean = false;
   isCartVisible: boolean = false;
   notificationCount: number = 0;
-  constructor(private router: Router) {}
+  userRole: 'duenio' | 'veterinario';
+
+  constructor(private router: Router, private roleService: RoleService) {
+    this.userRole = this.roleService.getUserRole();
+  }
 
   ngOnInit() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        this.showCartIcon = this.router.url.includes('homeduenio');
+        this.showCartIcon = this.userRole === 'duenio' && this.router.url.includes('/homeduenio');
       }
     });
   }

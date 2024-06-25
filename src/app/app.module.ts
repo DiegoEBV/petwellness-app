@@ -26,6 +26,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { ConsultasVetModule } from './consultas-vet/consultas-vet.module';
 import { TiendaModule } from './tienda/tienda.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -49,14 +50,15 @@ import { TiendaModule } from './tienda/tienda.module';
     HomeduenioModule,
     HomevetModule,
     HttpClientModule,
-    PerfilVetModule
-    PerfilDuenioModule
+    PerfilVetModule,
+    PerfilDuenioModule,
     MatCheckboxModule,
     FormsModule,
     MatIconModule,
     MatSlideToggleModule,
-    ConsultasVetModule
+    ConsultasVetModule,
     TiendaModule,
+    BrowserAnimationsModule
   ],
   providers: [
     provideAnimationsAsync()

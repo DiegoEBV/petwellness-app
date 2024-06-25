@@ -11,7 +11,7 @@ import { EstadisticaDuenioComponent } from './componentes/estadistica-duenio/est
 
 const routes: Routes = [
   { path: '', component: PerfilDuenioComponent },
-  { path: 'perfiles', component: PerfilPacienteDuenioComponent },
+  { path: 'perfiles-duenio', component: PerfilPacienteDuenioComponent },
   { path: 'informacion-general-duenio', component: InformacionGeneralDuenioComponent },
   { path: 'historial-medico-duenio', component: HistorialMedicoDuenioComponent },
   { path: 'notas-consulta-duenio', component: NotasConsultaDuenioComponent },

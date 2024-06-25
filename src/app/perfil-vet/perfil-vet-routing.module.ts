@@ -11,7 +11,7 @@ import { EstadisticaVetComponent } from './componentes/estadistica-vet/estadisti
 
 const routes: Routes = [
   { path: '', component: PerfilVetComponent },
-  { path: 'perfiles', component: PerfilPacienteVetComponent },
+  { path: 'perfiles-vet', component: PerfilPacienteVetComponent },
   { path: 'informacion-general-vet', component: InformacionGeneralVetComponent },
   { path: 'historial-medico-vet', component: HistorialMedicoVetComponent },
   { path: 'notas-consulta-vet', component: NotasConsultaVetComponent },
