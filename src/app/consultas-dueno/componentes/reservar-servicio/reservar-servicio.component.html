@@ -1,0 +1,68 @@
+<div class="container">
+  <div class="left-panel">
+    <h2>Reservar Servicio</h2>
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="tipoMascota">Tipo de mascota:</label>
+        <input id="tipoMascota" type="text" class="form-control" [(ngModel)]="tipoMascota" name="tipoMascota">
+      </div>
+      <div class="form-group">
+        <label>Modalidad:</label>
+        <div>
+          <input type="radio" id="virtual" name="modalidad" value="virtual" [(ngModel)]="modalidad">
+          <label for="virtual">Virtual</label>
+        </div>
+        <div>
+          <input type="radio" id="presencial" name="modalidad" value="presencial" [(ngModel)]="modalidad">
+          <label for="presencial">Presencial</label>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="tipoCita">Tipo de cita:</label>
+        <input id="tipoCita" type="text" class="form-control" [(ngModel)]="tipoCita" name="tipoCita">
+      </div>
+      <div class="form-group">
+        <label for="fecha">Fecha:</label>
+        <input id="fecha" type="date" class="form-control" [(ngModel)]="fecha" name="fecha">
+      </div>
+      <div class="form-group">
+        <label for="hora">Hora:</label>
+        <input id="hora" type="time" class="form-control" [(ngModel)]="hora" name="hora">
+      </div>
+      <div class="form-group">
+        <label for="correo">Correo:</label>
+        <input id="correo" type="email" class="form-control" [(ngModel)]="correo" name="correo">
+      </div>
+      <button type="submit" class="btn btn-primary">Registrar</button>
+      <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+    </form>
+  </div>
+  <div class="right-panel">
+    <h2>Próximas Consultas</h2>
+    <button 
+      class="consulta" 
+      [class.selected]="selectedDoctor === 'Dr Pedro Arias'" 
+      (click)="onSelectDoctor('Dr Pedro Arias')">
+      <span>Dr Pedro Arias</span><span>10:45</span>
+    </button>
+    <button 
+      class="consulta" 
+      [class.selected]="selectedDoctor === 'Dr José Salas'" 
+      (click)="onSelectDoctor('Dr José Salas')">
+      <span>Dr José Salas</span><span>10:45</span>
+    </button>
+    <button 
+      class="consulta" 
+      [class.selected]="selectedDoctor === 'Dra Maria Dueñas'" 
+      (click)="onSelectDoctor('Dra Maria Dueñas')">
+      <span>Dra Maria Dueñas</span><span>11:00</span>
+    </button>
+    <button 
+      class="consulta" 
+      [class.selected]="selectedDoctor === 'Dra Luisa Reyes'" 
+      (click)="onSelectDoctor('Dra Luisa Reyes')">
+      <span>Dra Luisa Reyes</span><span>11:00</span>
+    </button>
+  </div>
+</div>
+<router-outlet></router-outlet>

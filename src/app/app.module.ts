@@ -18,6 +18,7 @@ import { SecurityCodeComponent } from './security-code/security-code.component';
 import { HomeduenioModule } from './homeduenio/homeduenio.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HomevetModule } from './homevet/homevet.module';
+import { ConsultasDuenoModule } from './consultas-dueno/consultas-dueno.module';
 import { PerfilVetModule } from './perfil-vet/perfil-vet.module';
 import { PerfilDuenioModule } from './perfil-duenio/perfil-duenio.module';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -50,6 +51,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HomeduenioModule,
     HomevetModule,
     HttpClientModule,
+    ConsultasDuenoModule,
     PerfilVetModule,
     PerfilDuenioModule,
     MatCheckboxModule,
